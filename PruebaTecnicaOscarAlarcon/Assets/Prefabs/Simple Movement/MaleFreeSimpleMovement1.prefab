@@ -1063,7 +1063,13 @@ MonoBehaviour:
   m_jumpForce: 4
   m_animator: {fileID: 95665039525092722}
   m_rigidBody: {fileID: 54084939265967506}
+  m_wasGrounded: 0
+  m_currentDirection: {x: 0, y: 0, z: 0}
+  m_jumpTimeStamp: 0
+  m_minJumpInterval: 0.25
+  m_jumpInput: 0
   m_isGrounded: 0
+  ForwardObjectReference: {fileID: 0}
 --- !u!1 &1826566120413068
 GameObject:
   m_ObjectHideFlags: 0

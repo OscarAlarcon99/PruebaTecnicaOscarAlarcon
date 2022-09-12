@@ -47,7 +47,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     [SerializeField]
     private Vector3 m_currentDirection = Vector3.zero;
     /// <summary>
-    /// Variable que almacena el tiempo inicial del salto
+    /// Variable que almacena el tiempo de caida del salto
     /// </summary>
     [SerializeField]
     private float m_jumpTimeStamp = 0;
@@ -72,6 +72,12 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     /// Listado que almacena objetos donde toco suelo
     /// </summary>
     private List<Collider> m_collisions = new List<Collider>();
+    
+    /// <summary>
+    /// objeto que referencia el horizonte del juego
+    /// </summary>
+    public GameObject ForwardObjectReference;
+
 
     private void Awake()
     {
@@ -236,7 +242,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
 
         // aplicar movimiento apartir de la camara 
-        Vector3 direction = camera.forward * m_currentV + camera.right * m_currentH;
+        Vector3 direction = ForwardObjectReference.transform.forward * m_currentV + ForwardObjectReference.transform.right * m_currentH;
 
         float directionLength = direction.magnitude;
         
@@ -266,21 +272,30 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private void JumpingAndLanding()
     {
+        //bool que valida si el salto fue afectuado para inicial conteo de caida
         bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
 
+        //validacion despues de precionar input de salto
         if (jumpCooldownOver && m_isGrounded && m_jumpInput)
         {
+            //asignacion de tiempo de caida
             m_jumpTimeStamp = Time.time;
+
+            //agregar fuerza de salto
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
         }
 
+        // validacion de que esta en el aire 
         if (!m_wasGrounded && m_isGrounded)
         {
+            // activar trigger de caida
             m_animator.SetTrigger("Land");
         }
 
+        // validacion de que despego del suelo
         if (!m_isGrounded && m_wasGrounded)
         {
+            // activar trigger de salto
             m_animator.SetTrigger("Jump");
         }
     }
