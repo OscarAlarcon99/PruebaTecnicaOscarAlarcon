@@ -51,6 +51,11 @@ public class ScenesManager : Singleton<ScenesManager>
     public string CurrentLevelName { get { return _currentLevelName; } }
 
     /// <summary>
+    /// variable de clase que almacena todas las referencias usadas por la ui. 
+    /// </summary>
+    public UI ui;
+
+    /// <summary>
     /// Propiedad que retorna el estado de ejecución (T&F). 
     /// </summary>
     public bool IsPaused { get { return is_pause; } }
@@ -241,4 +246,14 @@ public class ScenesManager : Singleton<ScenesManager>
             isLoad = false;
         }
     }
+}
+
+[System.Serializable]
+public class UI
+{
+    [Header(" UI Settings")]
+    public Canvas canvas;
+    public GameObject pausePanel;
+    public GameObject subsPanel;
+    public GameObject videoPanel;
 }

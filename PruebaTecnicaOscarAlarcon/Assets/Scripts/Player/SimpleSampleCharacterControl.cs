@@ -14,11 +14,20 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     /// <summary>
     /// Controlador de animaciones
     /// </summary>
+    [SerializeField]
+    private CharacterInput characterPlayer; 
+    /// <summary>
+    /// Controlador de animaciones
+    /// </summary>
     [SerializeField] private Animator m_animator = null;
     /// <summary>
     /// Cuerpo Rigido del player
     /// </summary>
     [SerializeField] private Rigidbody m_rigidBody = null;
+    /// <summary>
+    /// objeto que referencia el horizonte del juego
+    /// </summary>
+    public GameObject ForwardObjectReference;
     /// <summary>
     /// Variable que almacena la anterior velocidad vertical
     /// </summary>
@@ -36,11 +45,6 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     /// Variable que almacena la lecutura de la Velocidad caminando
     /// </summary>
     private readonly float m_walkScale = 0.33f;
-    /// <summary>
-    /// Variable que almacena bool de si el player esta en el aire
-    /// </summary>
-    [SerializeField]
-    private bool m_wasGrounded;
     /// <summary>
     /// Variable que almacena vector por donde nos hemos movido
     /// </summary>
@@ -61,23 +65,20 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     /// </summary>
     [SerializeField]
     private bool m_jumpInput = false;
-
     /// <summary>
     /// Variable que almacena bool de si el player esta tocando el suelo
     /// </summary>
     [SerializeField]
     private bool m_isGrounded;
-
+    /// <summary>
+    /// Variable que almacena bool de si el player esta en el aire
+    /// </summary>
+    [SerializeField]
+    private bool m_wasGrounded;
     /// <summary>
     /// Listado que almacena objetos donde toco suelo
     /// </summary>
     private List<Collider> m_collisions = new List<Collider>();
-    
-    /// <summary>
-    /// objeto que referencia el horizonte del juego
-    /// </summary>
-    public GameObject ForwardObjectReference;
-
 
     private void Awake()
     {
@@ -191,10 +192,13 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private void Update()
     {
         //Validacion para cuando entra input de salto
-        if (!m_jumpInput && Input.GetKey(KeyCode.Space))
+        if (!m_jumpInput && characterPlayer.IsJumpKeyPressed())
         {
             m_jumpInput = true;
         }
+        
+        //Lectura de input
+        characterPlayer.GetInput();
     }
 
     private void FixedUpdate()
@@ -222,16 +226,18 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private void DirectUpdate()
     {
         //Lectura de input vertical
-        float v = Input.GetAxis("Vertical");
+        float v = characterPlayer.GetVerticalMovementInput();
         //Lectura de input horizontal
-        float h = Input.GetAxis("Horizontal");
+        float h = characterPlayer.GetHorizontalMovementInput();
 
         //referencia de posicion de maincamera
         Transform camera = Camera.main.transform;
 
         // Validacion de lectura de input mientras camina
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (characterPlayer.IsActionPressed())
         {
+            Debug.Log("sss");
+
             // multiplicacion por escala de velocidad caminando 
             v *= m_walkScale;
             h *= m_walkScale;
