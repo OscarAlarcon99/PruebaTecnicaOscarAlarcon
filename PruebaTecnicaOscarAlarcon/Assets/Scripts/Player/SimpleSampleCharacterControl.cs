@@ -18,7 +18,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// <summary>
     /// Controlador de animaciones
     /// </summary>
-    [SerializeField] private Animator m_animator = null;
+    public Animator m_animator = null;
     /// <summary>
     /// Cuerpo Rigido del player
     /// </summary>
@@ -195,9 +195,18 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
     private void Update()
     {
+        if (!Player.Instance.IsActivate)
+            return;
+
         if (cinmachineCamera.freeLook.gameObject.activeInHierarchy)
         {
             cinmachineCamera.InputCamera();
+        }
+
+        //validacion para cuando entra input de action
+        if (characterPlayerInput.IsActionPressed())
+        {
+            m_animator.SetTrigger("Pickup");
         }
 
         //Validacion para cuando entra input de salto

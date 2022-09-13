@@ -73,6 +73,16 @@ public class EnemyBoss : Singleton<EnemyBoss>
         newState.Enter(this);
     }
 
+    public void Die()
+    {
+        anim.SetBool("Dead", true);
+    }
+
+    public void Damage()
+    {
+        anim.SetTrigger("Damage");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         currentState.OnTriggerEnter(other);

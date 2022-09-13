@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3087854301617080547}
   - component: {fileID: 7849519838366123669}
   m_Layer: 0
-  m_Name: Projectile
-  m_TagString: Untagged
+  m_Name: ProjectilePlayer
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276634259436236259}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

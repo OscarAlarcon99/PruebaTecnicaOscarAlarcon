@@ -61,7 +61,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Animations
     m_StateMachine: {fileID: 110772290}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: b74874783d54d9e41a59f6da1e3b2ab9, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -72,7 +72,7 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
 --- !u!206 &20652962
 BlendTree:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -365,7 +365,7 @@ AnimatorStateTransition:
   m_CanTransitionToSelf: 1
 --- !u!1102 &110229514
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -393,7 +393,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &110235190
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -421,7 +421,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &110239538
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -447,7 +447,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &110244722
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -474,8 +474,8 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &110271614
 AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 3
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -501,7 +501,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &110277918
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -528,13 +528,13 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &110298324
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Pickup
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110184736}
@@ -547,7 +547,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b3662f281ce0fd5449670a910110afc4, type: 3}
+  m_Motion: {fileID: 7400000, guid: 09994b75326f6a3428424db88c9c5b6f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -555,7 +555,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1107 &110715302
 AnimatorStateMachine:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -580,13 +580,13 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 36, y: -276, z: 0}
-  m_EntryPosition: {x: 228, y: -276, z: 0}
+  m_EntryPosition: {x: 220, y: -240, z: 0}
   m_ExitPosition: {x: 228, y: -324, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 110244722}
 --- !u!1107 &110772290
 AnimatorStateMachine:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

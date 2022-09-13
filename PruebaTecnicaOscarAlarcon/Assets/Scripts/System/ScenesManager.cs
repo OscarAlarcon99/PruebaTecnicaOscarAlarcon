@@ -217,7 +217,6 @@ public class ScenesManager : Singleton<ScenesManager>
 
             case "DemoScene":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
-                SoundManager.Instance.PlayNewSound("BackGroundGame");
                 //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
                 break;
         }

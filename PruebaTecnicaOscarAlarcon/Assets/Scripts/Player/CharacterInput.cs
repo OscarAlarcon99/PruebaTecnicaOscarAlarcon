@@ -113,7 +113,14 @@ public class CharacterInput : MonoBehaviour
     /// </summary>
     public bool IsActionPressed()
     {
-        return input.PlayerMovement.Action.triggered;
+        if (touch)
+        {
+            return input.PlayerMovementTouch.Action.triggered;
+        }
+        else
+        {
+            return input.PlayerMovement.Action.triggered;
+        }
     }
     /// <summary>
     /// Funcion que retorna el valor de input de salto en el eje horizontal. 

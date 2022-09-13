@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PauseMenu
+  - EnemyBullet
+  - Caja
+  - PlayerBullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
