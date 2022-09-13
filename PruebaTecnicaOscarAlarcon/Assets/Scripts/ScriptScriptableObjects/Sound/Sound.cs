@@ -9,6 +9,7 @@ public class Sound : ScriptableObject
     [Range(.1f, 3f)]
     public float pitch;
     public AudioClip song;
+    public bool playOnAwake;
     public bool loop;
     public AudioMixerGroup mixerGroup;
     public AudioSource source;

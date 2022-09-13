@@ -48,6 +48,8 @@ public class CharacterInput : MonoBehaviour
     /// </summary>
     private float _verticalCameraInput;
 
+    public bool touch;
+
     /// <summary>
     /// Funcion que desactiva funcionalidad de input. 
     /// </summary>
@@ -62,29 +64,49 @@ public class CharacterInput : MonoBehaviour
     /// </summary>
     public void GetInput()
     {
-        if (ScenesManager.Instance.touchdBuild)
+        if (ScenesManager.Instance)
         {
-            deltaMove = input.PlayerMovementAndroid.Move.ReadValue<Vector2>();
-            deltaLook = input.PlayerMovementAndroid.Look.ReadValue<Vector2>();
+            touch = ScenesManager.Instance.touchdBuild;
+        }
+
+
+        if (touch)
+        {
+            deltaMove = input.PlayerMovementTouch.Move.ReadValue<Vector2>();
+            deltaLook = input.PlayerMovementTouch.Look.ReadValue<Vector2>();
         }
         else
         {
             deltaMove = input.PlayerMovement.Move.ReadValue<Vector2>();
             deltaLook = input.PlayerMovement.Look.ReadValue<Vector2>();
         }
-
     }
 
-    public bool TestInput()
+    public bool PauseKeyIsPressed()
     {
-        return input.PlayerMovement.Test.triggered;
+        if (touch)
+        {
+            return input.PlayerMovementTouch.Pause.triggered;
+        }
+        else
+        {
+            return input.PlayerMovement.Pause.triggered;
+
+        }
     }
     /// <summary>
     /// Funcion que recibe valor de input de salto. 
     /// </summary>
     public bool IsJumpKeyPressed()
     {
-        return input.PlayerMovement.Jump.triggered;
+        if (touch)
+        {
+            return input.PlayerMovementTouch.Jump.triggered;
+        }
+        else
+        {
+            return input.PlayerMovement.Jump.triggered;
+        }
     }
     /// <summary>
     /// Funcion que recibe valor de input de action. 
@@ -114,14 +136,14 @@ public class CharacterInput : MonoBehaviour
     /// </summary>
     public float GetHorizontalCameraInput()
     {
-        if (!ScenesManager.Instance.touchdBuild)
+        if (touch)
         {
-            _horizontalCameraInput = deltaLook.x;
+            _horizontalCameraInput = deltaLook.x * sensitivityX;
             return _horizontalCameraInput;
         }
         else
         {
-            _horizontalCameraInput = deltaLook.x * sensitivityX;
+            _horizontalCameraInput = deltaLook.x;
             return _horizontalCameraInput;
         }
     }
@@ -130,13 +152,13 @@ public class CharacterInput : MonoBehaviour
     /// </summary>
     public float GetVerticalCameraInput()
     {
-        if (!ScenesManager.Instance.touchdBuild)
+        if (touch)
         {
-            return _verticalCameraInput = deltaLook.y;
+            return _verticalCameraInput = deltaLook.y * sensitivityY;
         }
         else
         {
-            return _verticalCameraInput = deltaLook.y * sensitivityY;
+            return _verticalCameraInput = deltaLook.y;
         }
     }
 

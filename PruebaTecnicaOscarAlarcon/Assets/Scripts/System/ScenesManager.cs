@@ -212,12 +212,12 @@ public class ScenesManager : Singleton<ScenesManager>
         {
             case "MainMenu":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
-                SoundManager.Instance.PlayNewSound("BackgroundMenu");
+                SoundManager.Instance.PlayNewSound("BackGroundMainMenu");
                 break;
 
             case "DemoScene":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
-                SoundManager.Instance.PlayNewSound("BackgroundGame");
+                SoundManager.Instance.PlayNewSound("BackGroundGame");
                 //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
                 break;
         }
@@ -238,7 +238,7 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         is_pause = !is_pause;
         SoundManager.Instance.PauseAllSounds(is_pause);
-        //StatesManager.Instance.ui.pausePanel.SetActive(is_pause);
+        ui.pausePanel.SetActive(is_pause);
 
         if (is_pause)
         {
@@ -287,4 +287,6 @@ public class UI
     public GameObject subsPanel;
     public GameObject videoPanel;
     public GameObject touchPanel;
+    public UnityEngine.UI.Slider slider;
+
 }

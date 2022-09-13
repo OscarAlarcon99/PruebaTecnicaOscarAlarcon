@@ -20,7 +20,6 @@ public class ControllerSettings : MonoBehaviour
         sliderVoluemSettings.value = valueVolumen;
         SetQualitySettings(valueQuality);
         toggleUiTouch.onValueChanged.AddListener(delegate { SetBoolStateUITouch(toggleUiTouch); });
-        Debug.Log(valueVolumen);
     }
 
     /// <summary>
@@ -30,6 +29,15 @@ public class ControllerSettings : MonoBehaviour
     public void SetQualitySettings(int qualityIndex)
     {
         ScenesManager.Instance.SetQuality(qualityIndex);
+    }
+    public void Mute()
+    {
+        SoundManager.Instance.MuteAudio();
+    }
+
+    public void PauseController()
+    {
+        ScenesManager.Instance.Pause();
     }
 
     /// <summary>

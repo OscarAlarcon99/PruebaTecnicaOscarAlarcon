@@ -24,7 +24,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// </summary>
     [SerializeField] private Rigidbody m_rigidBody = null;
     /// <summary>
-    /// Listado que almacena objetos donde toco suelo
+    /// Controlador de camara third person cinemachine
     /// </summary>
     [SerializeField] private CinemachineControllerCamera cinmachineCamera;
     /// <summary>
@@ -195,12 +195,24 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
     private void Update()
     {
+        if (cinmachineCamera.freeLook.gameObject.activeInHierarchy)
+        {
+            cinmachineCamera.InputCamera();
+        }
+
         //Validacion para cuando entra input de salto
         if (!m_jumpInput && characterPlayerInput.IsJumpKeyPressed())
         {
             m_jumpInput = true;
         }
-        
+
+        //Validacion para cuando entra input de pausa
+
+        if (characterPlayerInput.PauseKeyIsPressed())
+        {
+            ScenesManager.Instance.Pause();
+        }
+
         //Lectura de input
         characterPlayerInput.GetInput();
     }
@@ -209,7 +221,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     {
         //Actualizacion de direccion de momiviento
         DirectUpdate();
-
         #region Control de Salto
 
         // envio a controlador de animacion del bool si toca el piso 

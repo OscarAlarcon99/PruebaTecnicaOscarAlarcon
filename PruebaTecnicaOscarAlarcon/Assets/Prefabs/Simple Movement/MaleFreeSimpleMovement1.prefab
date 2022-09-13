@@ -976,6 +976,7 @@ GameObject:
   - component: {fileID: 95665039525092722}
   - component: {fileID: 8748688856612009363}
   - component: {fileID: 6079978147798756200}
+  - component: {fileID: 1873155338}
   m_Layer: 0
   m_Name: MaleFreeSimpleMovement1
   m_TagString: Untagged
@@ -1060,11 +1061,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba158ff05cf30224f94bfdddec8e7635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  m_jumpForce: 4
-  characterPlayer: {fileID: 6079978147798756200}
+  moveSpeed: 4
+  m_jumpForce: 6
+  characterPlayerInput: {fileID: 6079978147798756200}
   m_animator: {fileID: 95665039525092722}
   m_rigidBody: {fileID: 54084939265967506}
+  cinmachineCamera: {fileID: 1873155338}
   ForwardObjectReference: {fileID: 0}
   m_currentDirection: {x: 0, y: 0, z: 0}
   m_jumpTimeStamp: 0
@@ -1086,6 +1088,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deltaMove: {x: 0, y: 0}
   deltaLook: {x: 0, y: 0}
+  sensitivityX: 10
+  sensitivityY: 1
+  touch: 0
+--- !u!114 &1873155338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824340380413090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f714109e99c4a4cbb3b3b6fa8dc7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeLook: {fileID: 0}
+  lookspeed: 30
 --- !u!1 &1826566120413068
 GameObject:
   m_ObjectHideFlags: 0

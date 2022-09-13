@@ -19,7 +19,7 @@ public class SoundManager : Singleton<SoundManager>
     [Header("Provicional Stats Sound Controller")]
     public List<Sound> provicionalLevelSounds = new List<Sound>();
     public List<AudioSource> pauseProvicionalSounds = new List<AudioSource>();
-    float currentVolumen;
+    public float currentVolumen;
 
     /// <summary>
     /// Funcion que crea todas las instancias de sonidos por tipo de nivel
@@ -31,12 +31,13 @@ public class SoundManager : Singleton<SoundManager>
             if (song.levelSound == musicLevel)
             {
                 song.source = gameObject.AddComponent<AudioSource>();
-                provicionalLevelSounds.Add(song);
                 song.source.clip = song.song;
                 song.source.volume = song.volume;
                 song.source.pitch = song.pitch;
+                song.source.playOnAwake = song.playOnAwake;
                 song.source.loop = song.loop;
                 song.source.outputAudioMixerGroup = song.mixerGroup;
+                provicionalLevelSounds.Add(song);
             }
         }
     }
@@ -58,6 +59,19 @@ public class SoundManager : Singleton<SoundManager>
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat(Tags.VOLUMENMASTER_TAG, volume);
+        audioMixer.GetFloat(Tags.VOLUMENMASTER_TAG, out currentVolumen);
+        
+        if (currentVolumen <= -60)
+        {
+            mute = false;
+        }
+        else
+        {
+            mute = true;
+        }
+
+        MuteAudio();
+
     }
     /// <summary>
     /// Funcion que mutea el audio 
@@ -69,13 +83,14 @@ public class SoundManager : Singleton<SoundManager>
         if (mute)
         {
             muteButton.image.sprite = songIcons[1];
-            audioMixer.GetFloat(Tags.VOLUMENMASTER_TAG, out currentVolumen);
-            audioMixer.SetFloat(Tags.VOLUMENMASTER_TAG, 0);
+            ScenesManager.Instance.ui.slider.value = -60;
+            audioMixer.SetFloat(Tags.VOLUMENMASTER_TAG, -60);
         }
         else
         {
             muteButton.image.sprite = songIcons[0];
-            audioMixer.SetFloat(Tags.VOLUMENMASTER_TAG, currentVolumen);
+            ScenesManager.Instance.ui.slider.value = 0; 
+            audioMixer.SetFloat(Tags.VOLUMENMASTER_TAG, 0);
         }
     }
     /// <summary>

@@ -51,7 +51,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""interactions"": ""Press""
                 },
                 {
-                    ""name"": ""Test"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""5bf30b2c-92d1-484f-9852-ec7bca1050ca"",
                     ""expectedControlType"": ""Button"",
@@ -206,18 +206,18 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""17e03b27-259a-4ac3-a947-16f39572b247"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PC"",
-                    ""action"": ""Test"",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         },
         {
-            ""name"": ""PlayerMovementAndroid"",
+            ""name"": ""PlayerMovementTouch"",
             ""id"": ""caba91e4-fa62-4b53-a933-88c0e97a615b"",
             ""actions"": [
                 {
@@ -253,12 +253,12 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Test"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
-                    ""id"": ""bfacfe58-8c2d-4b88-a5ce-99a2ef18d848"",
+                    ""id"": ""2933f839-32cc-40b4-9d4c-95019b0a0411"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press(pressPoint=0.1,behavior=1)""
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -305,6 +305,17 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6aac434d-9d0e-4779-b5ec-24fb558dfa08"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -345,14 +356,14 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         m_PlayerMovement_Look = m_PlayerMovement.FindAction("Look", throwIfNotFound: true);
         m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
         m_PlayerMovement_Action = m_PlayerMovement.FindAction("Action", throwIfNotFound: true);
-        m_PlayerMovement_Test = m_PlayerMovement.FindAction("Test", throwIfNotFound: true);
-        // PlayerMovementAndroid
-        m_PlayerMovementAndroid = asset.FindActionMap("PlayerMovementAndroid", throwIfNotFound: true);
-        m_PlayerMovementAndroid_Action = m_PlayerMovementAndroid.FindAction("Action", throwIfNotFound: true);
-        m_PlayerMovementAndroid_Jump = m_PlayerMovementAndroid.FindAction("Jump", throwIfNotFound: true);
-        m_PlayerMovementAndroid_Look = m_PlayerMovementAndroid.FindAction("Look", throwIfNotFound: true);
-        m_PlayerMovementAndroid_Move = m_PlayerMovementAndroid.FindAction("Move", throwIfNotFound: true);
-        m_PlayerMovementAndroid_Test = m_PlayerMovementAndroid.FindAction("Test", throwIfNotFound: true);
+        m_PlayerMovement_Pause = m_PlayerMovement.FindAction("Pause", throwIfNotFound: true);
+        // PlayerMovementTouch
+        m_PlayerMovementTouch = asset.FindActionMap("PlayerMovementTouch", throwIfNotFound: true);
+        m_PlayerMovementTouch_Action = m_PlayerMovementTouch.FindAction("Action", throwIfNotFound: true);
+        m_PlayerMovementTouch_Jump = m_PlayerMovementTouch.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerMovementTouch_Look = m_PlayerMovementTouch.FindAction("Look", throwIfNotFound: true);
+        m_PlayerMovementTouch_Move = m_PlayerMovementTouch.FindAction("Move", throwIfNotFound: true);
+        m_PlayerMovementTouch_Pause = m_PlayerMovementTouch.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -406,7 +417,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerMovement_Look;
     private readonly InputAction m_PlayerMovement_Jump;
     private readonly InputAction m_PlayerMovement_Action;
-    private readonly InputAction m_PlayerMovement_Test;
+    private readonly InputAction m_PlayerMovement_Pause;
     public struct PlayerMovementActions
     {
         private @InputPlayer m_Wrapper;
@@ -415,7 +426,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         public InputAction @Look => m_Wrapper.m_PlayerMovement_Look;
         public InputAction @Jump => m_Wrapper.m_PlayerMovement_Jump;
         public InputAction @Action => m_Wrapper.m_PlayerMovement_Action;
-        public InputAction @Test => m_Wrapper.m_PlayerMovement_Test;
+        public InputAction @Pause => m_Wrapper.m_PlayerMovement_Pause;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -437,9 +448,9 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 @Action.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnAction;
                 @Action.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnAction;
                 @Action.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnAction;
-                @Test.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnTest;
-                @Test.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnTest;
-                @Test.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnTest;
+                @Pause.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_PlayerMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -456,57 +467,57 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 @Action.started += instance.OnAction;
                 @Action.performed += instance.OnAction;
                 @Action.canceled += instance.OnAction;
-                @Test.started += instance.OnTest;
-                @Test.performed += instance.OnTest;
-                @Test.canceled += instance.OnTest;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
     public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
 
-    // PlayerMovementAndroid
-    private readonly InputActionMap m_PlayerMovementAndroid;
-    private IPlayerMovementAndroidActions m_PlayerMovementAndroidActionsCallbackInterface;
-    private readonly InputAction m_PlayerMovementAndroid_Action;
-    private readonly InputAction m_PlayerMovementAndroid_Jump;
-    private readonly InputAction m_PlayerMovementAndroid_Look;
-    private readonly InputAction m_PlayerMovementAndroid_Move;
-    private readonly InputAction m_PlayerMovementAndroid_Test;
-    public struct PlayerMovementAndroidActions
+    // PlayerMovementTouch
+    private readonly InputActionMap m_PlayerMovementTouch;
+    private IPlayerMovementTouchActions m_PlayerMovementTouchActionsCallbackInterface;
+    private readonly InputAction m_PlayerMovementTouch_Action;
+    private readonly InputAction m_PlayerMovementTouch_Jump;
+    private readonly InputAction m_PlayerMovementTouch_Look;
+    private readonly InputAction m_PlayerMovementTouch_Move;
+    private readonly InputAction m_PlayerMovementTouch_Pause;
+    public struct PlayerMovementTouchActions
     {
         private @InputPlayer m_Wrapper;
-        public PlayerMovementAndroidActions(@InputPlayer wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Action => m_Wrapper.m_PlayerMovementAndroid_Action;
-        public InputAction @Jump => m_Wrapper.m_PlayerMovementAndroid_Jump;
-        public InputAction @Look => m_Wrapper.m_PlayerMovementAndroid_Look;
-        public InputAction @Move => m_Wrapper.m_PlayerMovementAndroid_Move;
-        public InputAction @Test => m_Wrapper.m_PlayerMovementAndroid_Test;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMovementAndroid; }
+        public PlayerMovementTouchActions(@InputPlayer wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Action => m_Wrapper.m_PlayerMovementTouch_Action;
+        public InputAction @Jump => m_Wrapper.m_PlayerMovementTouch_Jump;
+        public InputAction @Look => m_Wrapper.m_PlayerMovementTouch_Look;
+        public InputAction @Move => m_Wrapper.m_PlayerMovementTouch_Move;
+        public InputAction @Pause => m_Wrapper.m_PlayerMovementTouch_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerMovementTouch; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMovementAndroidActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerMovementAndroidActions instance)
+        public static implicit operator InputActionMap(PlayerMovementTouchActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerMovementTouchActions instance)
         {
-            if (m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface != null)
             {
-                @Action.started -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnAction;
-                @Action.performed -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnAction;
-                @Action.canceled -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnAction;
-                @Jump.started -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnJump;
-                @Look.started -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnLook;
-                @Look.performed -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnLook;
-                @Look.canceled -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnLook;
-                @Move.started -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnMove;
-                @Test.started -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnTest;
-                @Test.performed -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnTest;
-                @Test.canceled -= m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface.OnTest;
+                @Action.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAction;
+                @Action.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAction;
+                @Action.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAction;
+                @Jump.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnJump;
+                @Look.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnLook;
+                @Move.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnMove;
+                @Pause.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPause;
             }
-            m_Wrapper.m_PlayerMovementAndroidActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Action.started += instance.OnAction;
@@ -521,13 +532,13 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Test.started += instance.OnTest;
-                @Test.performed += instance.OnTest;
-                @Test.canceled += instance.OnTest;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
-    public PlayerMovementAndroidActions @PlayerMovementAndroid => new PlayerMovementAndroidActions(this);
+    public PlayerMovementTouchActions @PlayerMovementTouch => new PlayerMovementTouchActions(this);
     private int m_GamePadSchemeIndex = -1;
     public InputControlScheme GamePadScheme
     {
@@ -552,14 +563,14 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnAction(InputAction.CallbackContext context);
-        void OnTest(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
-    public interface IPlayerMovementAndroidActions
+    public interface IPlayerMovementTouchActions
     {
         void OnAction(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
-        void OnTest(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
