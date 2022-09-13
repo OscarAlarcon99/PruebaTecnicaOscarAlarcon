@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleSampleCharacterControl : MonoBehaviour
+public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterControl>
 {
     /// <summary>
     /// Variable que almacena la velocidad del movimiento
@@ -14,8 +14,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     /// <summary>
     /// Controlador de animaciones
     /// </summary>
-    [SerializeField]
-    private CharacterInput characterPlayer; 
+    public  CharacterInput characterPlayerInput; 
     /// <summary>
     /// Controlador de animaciones
     /// </summary>
@@ -24,6 +23,10 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     /// Cuerpo Rigido del player
     /// </summary>
     [SerializeField] private Rigidbody m_rigidBody = null;
+    /// <summary>
+    /// Listado que almacena objetos donde toco suelo
+    /// </summary>
+    [SerializeField] private CinemachineControllerCamera cinmachineCamera;
     /// <summary>
     /// objeto que referencia el horizonte del juego
     /// </summary>
@@ -82,6 +85,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private void Awake()
     {
+        base.Awake();
         //Inicializacion de variables si no han sido agregadas en el inspector
         if (!m_animator) { gameObject.GetComponent<Animator>(); }
         if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
@@ -192,13 +196,13 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private void Update()
     {
         //Validacion para cuando entra input de salto
-        if (!m_jumpInput && characterPlayer.IsJumpKeyPressed())
+        if (!m_jumpInput && characterPlayerInput.IsJumpKeyPressed())
         {
             m_jumpInput = true;
         }
         
         //Lectura de input
-        characterPlayer.GetInput();
+        characterPlayerInput.GetInput();
     }
 
     private void FixedUpdate()
@@ -226,18 +230,16 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private void DirectUpdate()
     {
         //Lectura de input vertical
-        float v = characterPlayer.GetVerticalMovementInput();
+        float v = characterPlayerInput.GetVerticalMovementInput();
         //Lectura de input horizontal
-        float h = characterPlayer.GetHorizontalMovementInput();
+        float h = characterPlayerInput.GetHorizontalMovementInput();
 
         //referencia de posicion de maincamera
         Transform camera = Camera.main.transform;
 
         // Validacion de lectura de input mientras camina
-        if (characterPlayer.IsActionPressed())
+        if (characterPlayerInput.IsActionPressed())
         {
-            Debug.Log("sss");
-
             // multiplicacion por escala de velocidad caminando 
             v *= m_walkScale;
             h *= m_walkScale;
@@ -248,7 +250,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
 
         // aplicar movimiento apartir de la camara 
-        Vector3 direction = ForwardObjectReference.transform.forward * m_currentV + ForwardObjectReference.transform.right * m_currentH;
+        Vector3 direction = camera.forward * m_currentV + camera.right * m_currentH;
 
         float directionLength = direction.magnitude;
         

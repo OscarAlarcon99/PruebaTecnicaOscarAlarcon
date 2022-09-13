@@ -8,7 +8,6 @@ using TMPro;
 public class DialogueSystem : Singleton<DialogueSystem>
 {
     Queue<string> sentences;
-    List<Sound> provicionalSounds = new List<Sound>();
     Dialogue newDialogue;
     int index;
 
@@ -42,14 +41,6 @@ public class DialogueSystem : Singleton<DialogueSystem>
     {
         sentences.Clear();
 
-        if (newDialogue.sounds.Count > 0)
-        {
-            for (int i = 0; i < newDialogue.sequences.Length; i++)
-            {
-                provicionalSounds.Add(newDialogue.sounds[i]);
-            }
-        }
-
         foreach (string sentence in newDialogue.sequences)
         {
             sentences.Enqueue(sentence);
@@ -64,11 +55,6 @@ public class DialogueSystem : Singleton<DialogueSystem>
         {
             EndDialogue();
             return;
-        }
-
-        if (provicionalSounds.Count > 0)
-        {
-            SoundManager.Instance.PlayNewSound(provicionalSounds[index].name);
         }
 
         index++;
@@ -95,7 +81,6 @@ public class DialogueSystem : Singleton<DialogueSystem>
     public void EndDialogue()
     {
         index = 0;
-        provicionalSounds.Clear();
         inPlaying = false;
         sentences.Clear();
         panelDialogue.SetActive(false);

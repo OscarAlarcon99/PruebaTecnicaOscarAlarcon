@@ -37,7 +37,7 @@ public class ScenesManager : Singleton<ScenesManager>
     [SerializeField] private bool is_pause;
     public bool isLoad;
     public bool isUnLoad;
-
+    public bool touchdBuild;
     /// <summary>
     /// Varirable que almacena el nombre de la scen principal a carga.
     /// </summary>
@@ -164,6 +164,28 @@ public class ScenesManager : Singleton<ScenesManager>
     {
         Application.Quit();
     }
+    
+    void Update()
+    {
+        EditTouchSystem(touchdBuild);
+    }
+
+    /// <summary>
+    /// Método que cambia configuracion a touch.
+    /// </summary>
+    public void EditTouchSystem(bool isTouching)
+    {
+        if (isTouching)
+        {
+            ui.touchPanel.SetActive(true);
+        }
+        else
+        {
+            ui.touchPanel.SetActive(false);
+
+        }
+    }
+
 
     /// <summary>
     /// Método que permite cambiar la calidad de graficas.
@@ -184,13 +206,16 @@ public class ScenesManager : Singleton<ScenesManager>
 
         SoundManager.Instance.DeleteSoundsLevel();
 
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(_currentLevelName));
+
         switch (CurrentLevelName)
         {
-            case "TestMenu":
+            case "MainMenu":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.MAINMENU);
+                SoundManager.Instance.PlayNewSound("BackgroundMenu");
                 break;
 
-            case "NewMechanic":
+            case "DemoScene":
                 SoundManager.Instance.CreateSoundsLevel(MusicLevel.GAME);
                 SoundManager.Instance.PlayNewSound("BackgroundGame");
                 //Player.Instance.StartCoroutine(Player.Instance.LoadDataPlayer());
@@ -248,6 +273,11 @@ public class ScenesManager : Singleton<ScenesManager>
     }
 }
 
+
+
+/// <summary>
+/// clase serializable que almacena todas las referencias usadas por la ui. 
+/// </summary>
 [System.Serializable]
 public class UI
 {
@@ -256,4 +286,5 @@ public class UI
     public GameObject pausePanel;
     public GameObject subsPanel;
     public GameObject videoPanel;
+    public GameObject touchPanel;
 }

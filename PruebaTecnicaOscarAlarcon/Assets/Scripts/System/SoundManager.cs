@@ -17,11 +17,13 @@ public class SoundManager : Singleton<SoundManager>
     public List<Sound> songs = new List<Sound>();
     
     [Header("Provicional Stats Sound Controller")]
-    public List<Sound> provicionalLevelSound = new List<Sound>();
-    List<Sound> randomSound = new List<Sound>();
-    public List<AudioSource> pauseSoundProvicional = new List<AudioSource>();
+    public List<Sound> provicionalLevelSounds = new List<Sound>();
+    public List<AudioSource> pauseProvicionalSounds = new List<AudioSource>();
     float currentVolumen;
 
+    /// <summary>
+    /// Funcion que crea todas las instancias de sonidos por tipo de nivel
+    /// /// </summary>
     public void CreateSoundsLevel(MusicLevel musicLevel)
     {
         foreach (Sound song in songs)
@@ -29,7 +31,7 @@ public class SoundManager : Singleton<SoundManager>
             if (song.levelSound == musicLevel)
             {
                 song.source = gameObject.AddComponent<AudioSource>();
-                provicionalLevelSound.Add(song);
+                provicionalLevelSounds.Add(song);
                 song.source.clip = song.song;
                 song.source.volume = song.volume;
                 song.source.pitch = song.pitch;
@@ -38,22 +40,28 @@ public class SoundManager : Singleton<SoundManager>
             }
         }
     }
-    
+    /// <summary>
+    /// Funcion que elimina todas las instancias de sonidos
+    /// /// </summary>
     public void DeleteSoundsLevel()
     {
-        foreach (Sound s in provicionalLevelSound)
+        foreach (Sound s in provicionalLevelSounds)
         {
             Destroy(s.source);
         }
 
-        provicionalLevelSound.Clear();
+        provicionalLevelSounds.Clear();
     }
-
+    /// <summary>
+    /// Funcion que envia volumen general
+    /// /// </summary>
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat(Tags.VOLUMENMASTER_TAG, volume);
     }
-
+    /// <summary>
+    /// Funcion que mutea el audio 
+    /// /// </summary>
     public void MuteAudio()
     {
         mute = !mute;
@@ -70,7 +78,9 @@ public class SoundManager : Singleton<SoundManager>
             audioMixer.SetFloat(Tags.VOLUMENMASTER_TAG, currentVolumen);
         }
     }
-
+    /// <summary>
+    /// Funcion que reproduce sonido determinado 
+    /// /// </summary>
     public void PlayNewSound(string name)
     {
         Sound s = songs.Find(sounds => sounds.name == name);
@@ -84,46 +94,35 @@ public class SoundManager : Singleton<SoundManager>
             Debug.LogError("No Existe Track" + name);
         }
     }
-
-    public void RandomBackGroundSound()
-    {
-        foreach (Sound randomS in provicionalLevelSound)
-        {
-            if (randomS.musicType == MusicType.BACKGROUND)
-            {
-                randomSound.Add(randomS);
-            }
-        }
-
-        PlayNewSound(randomSound[Random.Range(0, randomSound.Count)].name);
-
-        randomSound.Clear();
-    }
-
+    /// <summary>
+    /// Funcion que pausa o despausa todos los sonidos que estan en reporoduccion
+    /// /// </summary>
     public void PauseAllSounds(bool validation)
     {
         if (validation)
         {
-            foreach (Sound s in provicionalLevelSound)
+            foreach (Sound s in provicionalLevelSounds)
             {
                 if (s.source.isPlaying)
                 {
-                    pauseSoundProvicional.Add(s.source);
+                    pauseProvicionalSounds.Add(s.source);
                     s.source.Pause();
                 }
             }
         }
         else
         {
-            for (int i = 0; i < pauseSoundProvicional.Count; i++)
+            for (int i = 0; i < pauseProvicionalSounds.Count; i++)
             {
-                pauseSoundProvicional[i].Play();
+                pauseProvicionalSounds[i].Play();
             }
 
-            pauseSoundProvicional.Clear();
+            pauseProvicionalSounds.Clear();
         }
     }
-
+    /// <summary>
+    /// Funcion que finaliza sonido determinado. 
+    /// </summary>
     public void EndSound(string name)
     {
         Sound s = songs.Find(sounds => sounds.name == name);
