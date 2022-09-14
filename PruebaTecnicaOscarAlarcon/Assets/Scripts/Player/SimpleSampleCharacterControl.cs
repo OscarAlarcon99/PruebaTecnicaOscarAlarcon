@@ -195,7 +195,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
     private void Update()
     {
-        if (!Player.Instance.IsActivate)
+        if (!Player.Instance.IsActive)
             return;
 
         if (cinmachineCamera.freeLook.gameObject.activeInHierarchy)
@@ -206,7 +206,8 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         //validacion para cuando entra input de action
         if (characterPlayerInput.IsActionPressed())
         {
-            m_animator.SetTrigger("Pickup");
+            EnemyBoss.Instance.healt.TakeDamage(20f);
+            m_animator.SetTrigger("Attack");
         }
 
         //Validacion para cuando entra input de salto

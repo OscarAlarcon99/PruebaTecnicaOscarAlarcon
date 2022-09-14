@@ -14,17 +14,12 @@ public class Player : Singleton<Player>
     [SerializeField] GameObject spawnPoint;
     
     public Sound[] fx_Sound;
-    public bool IsActivate { get { return isActive; } }
+    public bool IsActive { get => isActive; set => isActive = value; }
 
     void Start()
     {
         lifes = 3;
         currentTimeSpawn = timeToSpawn;
-    }
-
-    public void StateController()
-    {
-        isActive = !isActive;
     }
 
     public void Die()
@@ -35,18 +30,17 @@ public class Player : Singleton<Player>
 
     void Update()
     {
-        if (isActive)
+        if (IsActive)
         {
-            //ray = new Ray(transform.position, Enemy.Instance.transform.position);
-            //Debug.DrawRay(transform.position, ray.direction, Color.green);
-            //Debug.Log("aqui " + movimiento.crossFire.transform.position);
+            ray = new Ray(transform.position, EnemyBoss.Instance.transform.position);
+            Debug.DrawRay(transform.position, ray.direction, Color.green);
             currentTimeSpawn++;
         }
     }
 
     public void Attack()
     {
-        if (isActive && currentTimeSpawn > timeToSpawn)
+        if (IsActive && currentTimeSpawn > timeToSpawn)
         {
             
             //Destroy(Instantiate(poder_invierno, spawnPoint.transform.forward, Quaternion.identity), 20f);
@@ -66,11 +60,18 @@ public class Player : Singleton<Player>
 
     public void Damage()
     {
-        if (lifes != 0)
+        lifes--;
+
+        if (lifes == 0)
+        {
+            Instance.Die();
+            ManagerGame.Instance.FinishGame();
+        }
+        else
         {
             //SoundManager.Instance.PlayNewSound(Player.Instance.fx_Sound[0].name);
-            lifes--;
         }
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -78,14 +79,33 @@ public class Player : Singleton<Player>
         if (other.CompareTag("EnemyBullet"))
         {
             Damage();
+            Destroy(other.gameObject);
         }
 
-        if (other.CompareTag("Caja"))
+
+        if (other.CompareTag("EnemyBody"))
+        {
+            Damage();
+        }
+
+        if (other.CompareTag("HealtItem"))
+        {
+            if (lifes <= 3 )
+            {
+                lifes++;
+            }
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("TimeItem"))
+        {
+            Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("AmmoItem"))
         {
             Ammo++;
+            Destroy(other.gameObject);
         }
-
-        //other.gameObject.SetActive(false);
-
     }
 }

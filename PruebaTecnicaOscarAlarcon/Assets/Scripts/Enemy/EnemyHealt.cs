@@ -6,7 +6,7 @@ public class EnemyHealt : MonoBehaviour
 {
     public float health;
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
 
@@ -16,7 +16,7 @@ public class EnemyHealt : MonoBehaviour
         }
         else
         {
-            EnemyBoss.Instance.Damage();
+            EnemyBoss.Instance.Damage(health);
         }
     }
 }

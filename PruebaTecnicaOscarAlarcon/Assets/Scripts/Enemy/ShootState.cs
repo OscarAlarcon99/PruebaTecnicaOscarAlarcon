@@ -7,7 +7,7 @@ public class ShootState : State
     public override void Enter(EnemyBoss enemyBoss)
     {
         base.Enter(enemyBoss);
-        mainParent.anim.SetBool("Shoot",true);
+        mainParent.anim.SetBool("Shoot", true);
     }
 
     public override void Update()

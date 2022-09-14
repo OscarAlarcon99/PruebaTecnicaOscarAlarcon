@@ -9,6 +9,10 @@ TagManager:
   - Caja
   - PlayerBullet
   - Enemy
+  - TimeItem
+  - HealtItem
+  - AmmoItem
+  - EnemyBody
   layers:
   - Default
   - TransparentFX

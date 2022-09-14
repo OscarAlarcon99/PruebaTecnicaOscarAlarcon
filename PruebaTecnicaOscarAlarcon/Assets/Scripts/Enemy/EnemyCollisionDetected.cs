@@ -5,23 +5,20 @@ using UnityEngine;
 public class EnemyCollisionDetected : MonoBehaviour
 {
     [SerializeField] int damage;
-
-    void OnTriggerEnter(Collider other)
+    
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
-            return;
-
         if (other.gameObject.tag == "Player")
         {
+            //SoundManager.Instance.PlayNewSound("EnemyDamage");
             EnemyBoss.Instance.healt.TakeDamage(damage);
-
         }
 
-        if (other.CompareTag("PlayerBullet"))
+        if (other.gameObject.tag == "PlayerBullet")
         {
-            Destroy(other.gameObject);
-            SoundManager.Instance.PlayNewSound("EnemyDamage");
+            //SoundManager.Instance.PlayNewSound("EnemyDamage");
             EnemyBoss.Instance.healt.TakeDamage(damage);
+            Destroy(other.gameObject);
         }
     }
 }

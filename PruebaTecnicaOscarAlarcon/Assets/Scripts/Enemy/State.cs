@@ -26,6 +26,7 @@ public abstract class State
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player Salio exit");
             mainParent.Target = null;
             mainParent.ChangeState(new IdleState());
         }

@@ -12,7 +12,10 @@ public class FindTargetState : State
             mainParent.Rotator.rotation, mainParent.GhostRotator.rotation,
             Time.deltaTime * mainParent.RotationSpeed);
 
-        if (mainParent.GhostRotator.rotation.y == mainParent.Rotator.rotation.y)
+        mainParent.CalculateDistanceBetweenTarget();
+
+        if (mainParent.GhostRotator.rotation.y == mainParent.Rotator.rotation.y &&
+            mainParent.CanSeeTarget(mainParent.GunBarrel.forward, mainParent.Rotator.position, "Player"))
         {
             mainParent.ChangeState(new ShootState());
         }

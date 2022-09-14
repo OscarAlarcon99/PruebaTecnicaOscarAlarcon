@@ -11,9 +11,9 @@ public class Shoot : MonoBehaviour
 
     public void Shooting()
     {
-        Quaternion headingDirection = Quaternion.FromToRotation(projectile.transform.forward, 
-            EnemyBoss.Instance.GunBarrel.forward);
-
+        Quaternion headingDirection = Quaternion.FromToRotation(projectile.transform.forward,
+        EnemyBoss.Instance.GunBarrel.forward);
+        
         Instantiate(projectile, EnemyBoss.Instance.GunBarrel.position, headingDirection).GetComponent<Projectile>()
             .Direction = EnemyBoss.Instance.GunBarrel.forward;
     }

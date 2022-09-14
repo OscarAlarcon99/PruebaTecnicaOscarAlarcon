@@ -26,6 +26,8 @@ public class ManagerGame : Singleton<ManagerGame>
     {
         yield return new WaitForSeconds(2f);
         GameUI[0].SetActive(true);
+        Player.Instance.IsActive = true;
+        EnemyBoss.Instance.IsActive = true;
         //SoundManager.Instance.PlayNewSound("BackGroundGame");
     }
 
@@ -50,19 +52,20 @@ public class ManagerGame : Singleton<ManagerGame>
                 lifesUI[0].gameObject.SetActive(false);
                 lifesUI[1].gameObject.SetActive(false);
                 lifesUI[2].gameObject.SetActive(false);
-
-                FinishGame();
                 break;
+
             case 1:
                 lifesUI[0].gameObject.SetActive(true);
                 lifesUI[1].gameObject.SetActive(false);
                 lifesUI[2].gameObject.SetActive(false);
                 break;
+
             case 2:
                 lifesUI[0].gameObject.SetActive(true);
                 lifesUI[1].gameObject.SetActive(true);
                 lifesUI[2].gameObject.SetActive(false);
                 break;
+
             case 3:
                 lifesUI[0].gameObject.SetActive(true);
                 lifesUI[1].gameObject.SetActive(true);
@@ -75,11 +78,11 @@ public class ManagerGame : Singleton<ManagerGame>
     {
         //StatesManager.Instance.uIController.CrossFireState(false);
         sliderEnemyUI.gameObject.SetActive(false);
-        //EnemyBoss.Instance.IsActivate = false;
-        Player.Instance.StateController();
-        Player.Instance.Die();
+        EnemyBoss.Instance.IsActive = false;
+        Player.Instance.IsActive = false;
+
         //Player.Instance.gameObject.SetActive(false);
-        //ScenesManager.Instance.isLoad = true;
-        //ScenesManager.Instance.LoadLevel("Introduccion_Mottis");
+        ScenesManager.Instance.isLoad = true;
+        ScenesManager.Instance.LoadLevel("MainMenu");
     }
 }
