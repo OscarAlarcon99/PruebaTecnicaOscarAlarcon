@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(pressPoint=0.1,behavior=1)"
+                },
+                {
+                    "name": "Aim",
+                    "type": "Button",
+                    "id": "c71f4488-ef3d-401a-91d3-71dcf30d6d22",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -198,6 +206,17 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a4b17962-c542-47f3-be20-0da65922d688",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

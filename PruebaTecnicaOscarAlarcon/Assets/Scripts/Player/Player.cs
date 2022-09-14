@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Player : Singleton<Player>
 {
-    public Ray ray;
     public int lifes;
-    [SerializeField] int Ammo;
-    [SerializeField] float currentTimeSpawn;
-    [SerializeField] float timeToSpawn;
-    [SerializeField] bool isActive;
-    [SerializeField] GameObject poder_invierno;
-    [SerializeField] GameObject spawnPoint;
+    public int Ammo;
+    public float currentTimeSpawn;
+    public float timeToSpawn;
+    public bool isActive;
+
     
     public Sound[] fx_Sound;
     public bool IsActive { get => isActive; set => isActive = value; }
@@ -32,29 +30,7 @@ public class Player : Singleton<Player>
     {
         if (IsActive)
         {
-            ray = new Ray(transform.position, EnemyBoss.Instance.transform.position);
-            Debug.DrawRay(transform.position, ray.direction, Color.green);
             currentTimeSpawn++;
-        }
-    }
-
-    public void Attack()
-    {
-        if (IsActive && currentTimeSpawn > timeToSpawn)
-        {
-            
-            //Destroy(Instantiate(poder_invierno, spawnPoint.transform.forward, Quaternion.identity), 20f);
-            //ProjectileMoveScript poder = pooling.GetPooledObjects().GetComponent<ProjectileMoveScript>();
-            //poder.Start();
-            //poder.gameObject.SetActive(true);
-            
-            Quaternion headingDirection = Quaternion.FromToRotation(poder_invierno.transform.forward,
-                spawnPoint.transform.forward);
-
-            Instantiate(poder_invierno, spawnPoint.transform.position, headingDirection).GetComponent<Projectile>()
-                .Direction = spawnPoint.transform.forward;
-            
-            currentTimeSpawn = 0;
         }
     }
 
@@ -99,11 +75,14 @@ public class Player : Singleton<Player>
 
         if (other.CompareTag("TimeItem"))
         {
+            ManagerGame.Instance.timer.RestaurarTiempo(10f);
             Destroy(other.gameObject);
         }
 
         if (other.CompareTag("AmmoItem"))
         {
+            Ammo++;
+            Ammo++;
             Ammo++;
             Destroy(other.gameObject);
         }

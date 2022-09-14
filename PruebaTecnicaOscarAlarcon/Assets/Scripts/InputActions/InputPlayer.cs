@@ -57,6 +57,14 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(pressPoint=0.1,behavior=1)""
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Button"",
+                    ""id"": ""c71f4488-ef3d-401a-91d3-71dcf30d6d22"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -213,6 +221,17 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4b17962-c542-47f3-be20-0da65922d688"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -357,6 +376,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
         m_PlayerMovement_Action = m_PlayerMovement.FindAction("Action", throwIfNotFound: true);
         m_PlayerMovement_Pause = m_PlayerMovement.FindAction("Pause", throwIfNotFound: true);
+        m_PlayerMovement_Aim = m_PlayerMovement.FindAction("Aim", throwIfNotFound: true);
         // PlayerMovementTouch
         m_PlayerMovementTouch = asset.FindActionMap("PlayerMovementTouch", throwIfNotFound: true);
         m_PlayerMovementTouch_Action = m_PlayerMovementTouch.FindAction("Action", throwIfNotFound: true);
@@ -418,6 +438,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerMovement_Jump;
     private readonly InputAction m_PlayerMovement_Action;
     private readonly InputAction m_PlayerMovement_Pause;
+    private readonly InputAction m_PlayerMovement_Aim;
     public struct PlayerMovementActions
     {
         private @InputPlayer m_Wrapper;
@@ -427,6 +448,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_PlayerMovement_Jump;
         public InputAction @Action => m_Wrapper.m_PlayerMovement_Action;
         public InputAction @Pause => m_Wrapper.m_PlayerMovement_Pause;
+        public InputAction @Aim => m_Wrapper.m_PlayerMovement_Aim;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -451,6 +473,9 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnPause;
+                @Aim.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnAim;
             }
             m_Wrapper.m_PlayerMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -470,6 +495,9 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
             }
         }
     }
@@ -564,6 +592,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnAction(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
     }
     public interface IPlayerMovementTouchActions
     {

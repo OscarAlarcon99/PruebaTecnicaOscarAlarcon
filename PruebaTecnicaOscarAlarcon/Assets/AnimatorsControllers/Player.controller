@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  nameTrigger: 
+  nameTrigger: Attack
 --- !u!1101 &-4354543440185379750
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -479,7 +479,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MagicAttack
-  m_Speed: 1
+  m_Speed: 4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2465722891322265720}
@@ -493,7 +493,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: d88a7edcdf76ab240b2b98a4e7e7b898, type: 3}
+  m_Motion: {fileID: 7400000, guid: 7468a0416c89f6f4c8e20f21378671ae, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

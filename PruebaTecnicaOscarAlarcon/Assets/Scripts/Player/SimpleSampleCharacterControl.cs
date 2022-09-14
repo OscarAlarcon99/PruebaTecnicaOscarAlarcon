@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterControl>
 {
@@ -82,6 +83,8 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// Listado que almacena objetos donde toco suelo
     /// </summary>
     private List<Collider> m_collisions = new List<Collider>();
+    public bool aimUse;
+    public CannonController shooting;
 
     private void Awake()
     {
@@ -203,13 +206,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
             cinmachineCamera.InputCamera();
         }
 
-        //validacion para cuando entra input de action
-        if (characterPlayerInput.IsActionPressed())
-        {
-            EnemyBoss.Instance.healt.TakeDamage(20f);
-            m_animator.SetTrigger("Attack");
-        }
-
         //Validacion para cuando entra input de salto
         if (!m_jumpInput && characterPlayerInput.IsJumpKeyPressed())
         {
@@ -243,6 +239,37 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         m_jumpInput = false;
 
         #endregion
+    }
+
+    public void CallAim(InputAction.CallbackContext context)
+    {
+
+        if (context.started)
+        {
+            aimUse = true;
+        }
+
+        if (context.performed)
+        {
+            aimUse = true;
+        }
+
+        if (context.canceled)
+        {
+            aimUse = false;
+            shooting.Shooting();
+        }
+
+        if (Player.Instance.Ammo > 0 && aimUse)
+        {
+
+            shooting.line.enabled = true;
+        }
+        else
+        {
+            shooting.line.enabled = false;
+        }
+
     }
 
     /// <summary>

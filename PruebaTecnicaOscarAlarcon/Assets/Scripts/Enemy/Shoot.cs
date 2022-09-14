@@ -13,8 +13,9 @@ public class Shoot : MonoBehaviour
     {
         Quaternion headingDirection = Quaternion.FromToRotation(projectile.transform.forward,
         EnemyBoss.Instance.GunBarrel.forward);
-        
-        Instantiate(projectile, EnemyBoss.Instance.GunBarrel.position, headingDirection).GetComponent<Projectile>()
-            .Direction = EnemyBoss.Instance.GunBarrel.forward;
+        GameObject instance = Instantiate(projectile, EnemyBoss.Instance.GunBarrel.position, headingDirection);
+        instance.GetComponent<Projectile>().Direction = EnemyBoss.Instance.GunBarrel.forward;
+        SoundManager.Instance.PlayNewSound("AttackEnemy");
+        Destroy(instance, 15f);
     }
 }

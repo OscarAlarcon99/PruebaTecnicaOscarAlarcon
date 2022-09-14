@@ -7,7 +7,6 @@ using System;
 public class Timer : MonoBehaviour
 {
     public float currentTime;
-    public int startMinutes;
     public Text ui;
     public bool timerActive;
 
@@ -16,20 +15,21 @@ public class Timer : MonoBehaviour
     {
         if (timerActive)
         {
-            currentTime = currentTime - Time.deltaTime;
-            if (currentTime <= 0)
-            {
-                timerActive = false;
-            }
-
+            currentTime = currentTime + Time.deltaTime;
+            
             TimeSpan time = TimeSpan.FromSeconds(currentTime);
             ui.text = time.Minutes.ToString() + ":" + time.Seconds.ToString();
         }
     }
 
+    public void RestaurarTiempo(float tiempo)
+    {
+        currentTime -= tiempo;
+    }
+
     public void StartTimer()
     {
-        currentTime = startMinutes * 60;
+        currentTime = 0;
         timerActive = true;
     }
 }

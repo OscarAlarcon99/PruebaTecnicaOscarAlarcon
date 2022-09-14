@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 7341198609881663153}
     - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
       propertyPath: songs.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
       propertyPath: songs.Array.data[0]
@@ -321,6 +321,14 @@ PrefabInstance:
       propertyPath: songs.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 2a09509dc7293794c81ec8d483c1b926, type: 2}
+    - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
+      propertyPath: songs.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: c055e9084f93efa4d9b71205f9c8d703, type: 2}
+    - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
+      propertyPath: songs.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f3d9e5e8007acd458b17aacb211e1bf, type: 2}
     - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
       propertyPath: songIcons.Array.size
       value: 2
@@ -606,6 +614,10 @@ PrefabInstance:
     - target: {fileID: 7341198611391413494, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
       propertyPath: m_Name
       value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787480896813730595, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_IsOn
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}

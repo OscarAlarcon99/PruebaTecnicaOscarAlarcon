@@ -6,29 +6,59 @@ using UnityEngine.UI;
 
 public class ManagerGame : Singleton<ManagerGame>
 {
+    public Text valueAmmo;
     public Slider sliderEnemyUI;
     public Image[] lifesUI;
-    public GameObject[] GameUI;
+    public GameObject[] gameUI;
+    public GameObject[] Items;
+    public GameObject[] pointSpawn;
+    public Timer timer;
+    public int indexItems;
+    GameObject currentSpawnPoint;
+
+
 
     void Start()
     {
         StartCoroutine(StartGame());
+        InvokeRepeating("Spawn", 7, 20);
     }
 
     public void Update()
     {
         DamagePlayerUI();
         DamageEnemyUI();
+        Game();
     }
 
+    public void Spawn()
+    {
+        int Ramdom = UnityEngine.Random.Range(0, pointSpawn.Length);
+        
+        if (currentSpawnPoint != pointSpawn[Ramdom])
+        {
+            currentSpawnPoint = pointSpawn[Ramdom];
+
+            Instantiate(Items[indexItems], currentSpawnPoint.transform.position, Quaternion.identity);
+            indexItems++;
+        }
+
+    }
+
+
+    public void Game()
+    {
+        valueAmmo.text = Player.Instance.Ammo.ToString();
+    }
 
     IEnumerator StartGame()
     {
         yield return new WaitForSeconds(2f);
-        GameUI[0].SetActive(true);
+        timer.StartTimer();
+        gameUI[0].SetActive(true);
         Player.Instance.IsActive = true;
         EnemyBoss.Instance.IsActive = true;
-        //SoundManager.Instance.PlayNewSound("BackGroundGame");
+        SoundManager.Instance.PlayNewSound("BackGroundGame");
     }
 
     public void DamageEnemyUI()
@@ -76,7 +106,7 @@ public class ManagerGame : Singleton<ManagerGame>
 
     public void FinishGame()
     {
-        //StatesManager.Instance.uIController.CrossFireState(false);
+        timer.timerActive = false;
         sliderEnemyUI.gameObject.SetActive(false);
         EnemyBoss.Instance.IsActive = false;
         Player.Instance.IsActive = false;

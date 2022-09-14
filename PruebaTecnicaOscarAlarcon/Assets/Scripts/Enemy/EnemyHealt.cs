@@ -9,6 +9,8 @@ public class EnemyHealt : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        
+        SoundManager.Instance.PlayNewSound("DamageEnemy");
 
         if (health <= 0)
         {
