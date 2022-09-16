@@ -9,21 +9,20 @@ public class Player : Singleton<Player>
     public float currentTimeSpawn;
     public float timeToSpawn;
     public bool isActive;
-
-    
-    public Sound[] fx_Sound;
+    public CannonController shootController;
     public bool IsActive { get => isActive; set => isActive = value; }
 
     void Start()
     {
+        shootController = GetComponentInChildren<CannonController>();
         lifes = 3;
         currentTimeSpawn = timeToSpawn;
     }
 
     public void Die()
     {
-        SimpleSampleCharacterControl.Instance.m_animator.SetBool("Dead", true);
-        gameObject.SetActive(false);
+        SimpleSampleCharacterControl.Instance.SendAnimationReaction(2);
+        isActive = false;
     }
 
     void Update()
@@ -32,6 +31,12 @@ public class Player : Singleton<Player>
         {
             currentTimeSpawn++;
         }
+    }
+    
+    public void Attack()
+    {
+        shootController.Shooting();
+        Debug.Log("attack");
     }
 
     public void Damage()
@@ -45,7 +50,8 @@ public class Player : Singleton<Player>
         }
         else
         {
-            //SoundManager.Instance.PlayNewSound(Player.Instance.fx_Sound[0].name);
+            SimpleSampleCharacterControl.Instance.SendAnimationReaction(0);
+            SoundManager.Instance.PlayNewSound("PlayerDamage");
         }
 
     }
@@ -70,12 +76,14 @@ public class Player : Singleton<Player>
             {
                 lifes++;
             }
+            //reproducir sonido
             Destroy(other.gameObject);
         }
 
         if (other.CompareTag("TimeItem"))
         {
             ManagerGame.Instance.timer.RestaurarTiempo(10f);
+            //reproducir sonido
             Destroy(other.gameObject);
         }
 
@@ -84,6 +92,7 @@ public class Player : Singleton<Player>
             Ammo++;
             Ammo++;
             Ammo++;
+            //reproducir sonido
             Destroy(other.gameObject);
         }
     }

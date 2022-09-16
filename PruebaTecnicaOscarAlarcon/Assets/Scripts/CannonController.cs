@@ -10,17 +10,23 @@ public class CannonController : MonoBehaviour
     public GameObject Cannonball;
     public Transform ShotPoint;
     public GameObject Explosion;
-
-    public float HorizontalRotation;
-    public float VerticalRotation;
+    [SerializeField] float HorizontalRotation;
+    [SerializeField] float VerticalRotation;
+    public Vector3 firstPosition;
+    [SerializeField] float angleYMin;
+    [SerializeField] float angleYMax;
 
     private void Update()
     {
-        VerticalRotation = SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput();
-        transform.rotation = Quaternion.Euler(SimpleSampleCharacterControl.Instance.shooting.transform.rotation.eulerAngles +
-        new Vector3(0, SimpleSampleCharacterControl.Instance.shooting.HorizontalRotation * SimpleSampleCharacterControl.Instance.shooting.rotationSpeed, SimpleSampleCharacterControl.Instance.shooting.VerticalRotation * SimpleSampleCharacterControl.Instance.shooting.rotationSpeed));
-
+        if (SimpleSampleCharacterControl.Instance.aimUse)
+        {
+            //VerticalRotation = Mathf.Clamp(SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput(), angleYMin, angleYMax);
+            VerticalRotation = SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput();
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles +
+           new Vector3(0, HorizontalRotation * rotationSpeed, VerticalRotation * rotationSpeed));
+        }
     }
+
     public void Shooting()
     {
         if (Player.Instance.Ammo > 0 && Player.Instance.IsActive && Player.Instance.currentTimeSpawn > Player.Instance.timeToSpawn)

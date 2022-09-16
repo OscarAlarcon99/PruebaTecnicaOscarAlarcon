@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class CinemachineControllerCamera : MonoBehaviour
 {
-    public Cinemachine.CinemachineFreeLook freeLook;
+    public Cinemachine.CinemachineFreeLook freeAim;
+
     public float lookspeed;
     public void InputCamera()
     {
-        freeLook.m_XAxis.Value += SimpleSampleCharacterControl.Instance.characterPlayerInput.GetHorizontalCameraInput() * lookspeed * Time.deltaTime;
-        freeLook.m_YAxis.Value += SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput() * Time.deltaTime;
+        if (SimpleSampleCharacterControl.Instance.aimUse)
+        {
+            //freeAim.m_XAxis.Value += SimpleSampleCharacterControl.Instance.characterPlayerInput.GetHorizontalCameraInput() * lookspeed * Time.deltaTime;
+            freeAim.m_YAxis.Value += SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput() * Time.deltaTime;
+            freeAim.m_YAxisRecentering.m_RecenteringTime = 15f;
+            freeAim.m_YAxisRecentering.m_WaitTime = 30f;
+        }
+        else
+        {
+            freeAim.m_YAxis.Value += SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput() * Time.deltaTime;
+            freeAim.m_YAxisRecentering.m_RecenteringTime = 1f;
+            freeAim.m_YAxisRecentering.m_WaitTime = 0.5f;
+
+        }
     }
 }

@@ -615,10 +615,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7787480896813730595, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
-      propertyPath: m_IsOn
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
 --- !u!114 &7341198609881663149 stripped

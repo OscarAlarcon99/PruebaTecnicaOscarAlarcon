@@ -60,11 +60,11 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Aim"",
-                    ""type"": ""Button"",
-                    ""id"": ""c71f4488-ef3d-401a-91d3-71dcf30d6d22"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""76c2356e-d1bf-4507-b6ee-e344825a9f91"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -224,11 +224,33 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a4b17962-c542-47f3-be20-0da65922d688"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""7e913d89-b2b8-4dba-b8ed-9adfb75760f5"",
+                    ""path"": ""<Keyboard>/x"",
                     ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": ""PC"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96f39206-d0c7-425a-b6bc-4ad8f7b01378"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c826bf6-679d-40b4-b3bc-41cf68cea7a6"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -240,28 +262,12 @@ public class @InputPlayer : IInputActionCollection, IDisposable
             ""id"": ""caba91e4-fa62-4b53-a933-88c0e97a615b"",
             ""actions"": [
                 {
-                    ""name"": ""Action"",
-                    ""type"": ""Button"",
-                    ""id"": ""276f3ea7-1aed-4884-881f-1519a7670ba5"",
+                    ""name"": ""Aim"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""0ebccb81-fac7-44a7-bb5c-761ed063422f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""Jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""cce602c9-ab0a-403a-9f75-6568cd95a5ce"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Look"",
-                    ""type"": ""Value"",
-                    ""id"": ""070c0a0f-afd4-41a9-bfc6-adfa69d8162e"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Move"",
@@ -272,15 +278,77 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Look"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""81489641-94f8-46ce-a323-021aa50bd031"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""cce602c9-ab0a-403a-9f75-6568cd95a5ce"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""276f3ea7-1aed-4884-881f-1519a7670ba5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""2933f839-32cc-40b4-9d4c-95019b0a0411"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PrimaryTouchContact"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""070c0a0f-afd4-41a9-bfc6-adfa69d8162e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""PrimaryTouchPosition"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""3ebf30f2-e53b-4912-8ee7-7cd1ed9c12a9"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ff4b9df6-c8c2-4b2a-9e10-ba06c11ce2ba"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6aac434d-9d0e-4779-b5ec-24fb558dfa08"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
                 {
                     ""name"": """",
                     ""id"": ""16821d19-e3c9-4a7d-bde9-7d2a84230c83"",
@@ -294,23 +362,23 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""61e8d380-cf03-4c3a-a605-db457e0ad6f3"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""id"": ""b8e23a70-4169-4c06-aaca-1bcff61be7b7"",
+                    ""path"": ""<Touchscreen>/primaryTouch/press"",
                     ""interactions"": """",
-                    ""processors"": ""StickDeadzone"",
-                    ""groups"": ""GamePad"",
-                    ""action"": ""Look"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryTouchContact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ff4b9df6-c8c2-4b2a-9e10-ba06c11ce2ba"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""ee87174a-c1ae-4206-9b38-3e5a85154a85"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""groups"": ""GamePad"",
-                    ""action"": ""Jump"",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -327,12 +395,23 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6aac434d-9d0e-4779-b5ec-24fb558dfa08"",
-                    ""path"": ""<Gamepad>/start"",
-                    ""interactions"": """",
+                    ""id"": ""c0dbaa24-5a9d-4f6e-9b63-457a64600745"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": ""GamePad"",
-                    ""action"": ""Pause"",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee54954c-cfc2-4f7b-a5e0-7ae47c4cb9d8"",
+                    ""path"": ""<Touchscreen>/primaryTouch/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryTouchPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -379,11 +458,14 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         m_PlayerMovement_Aim = m_PlayerMovement.FindAction("Aim", throwIfNotFound: true);
         // PlayerMovementTouch
         m_PlayerMovementTouch = asset.FindActionMap("PlayerMovementTouch", throwIfNotFound: true);
-        m_PlayerMovementTouch_Action = m_PlayerMovementTouch.FindAction("Action", throwIfNotFound: true);
-        m_PlayerMovementTouch_Jump = m_PlayerMovementTouch.FindAction("Jump", throwIfNotFound: true);
-        m_PlayerMovementTouch_Look = m_PlayerMovementTouch.FindAction("Look", throwIfNotFound: true);
+        m_PlayerMovementTouch_Aim = m_PlayerMovementTouch.FindAction("Aim", throwIfNotFound: true);
         m_PlayerMovementTouch_Move = m_PlayerMovementTouch.FindAction("Move", throwIfNotFound: true);
+        m_PlayerMovementTouch_Look = m_PlayerMovementTouch.FindAction("Look", throwIfNotFound: true);
+        m_PlayerMovementTouch_Jump = m_PlayerMovementTouch.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerMovementTouch_Action = m_PlayerMovementTouch.FindAction("Action", throwIfNotFound: true);
         m_PlayerMovementTouch_Pause = m_PlayerMovementTouch.FindAction("Pause", throwIfNotFound: true);
+        m_PlayerMovementTouch_PrimaryTouchContact = m_PlayerMovementTouch.FindAction("PrimaryTouchContact", throwIfNotFound: true);
+        m_PlayerMovementTouch_PrimaryTouchPosition = m_PlayerMovementTouch.FindAction("PrimaryTouchPosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -506,20 +588,26 @@ public class @InputPlayer : IInputActionCollection, IDisposable
     // PlayerMovementTouch
     private readonly InputActionMap m_PlayerMovementTouch;
     private IPlayerMovementTouchActions m_PlayerMovementTouchActionsCallbackInterface;
-    private readonly InputAction m_PlayerMovementTouch_Action;
-    private readonly InputAction m_PlayerMovementTouch_Jump;
-    private readonly InputAction m_PlayerMovementTouch_Look;
+    private readonly InputAction m_PlayerMovementTouch_Aim;
     private readonly InputAction m_PlayerMovementTouch_Move;
+    private readonly InputAction m_PlayerMovementTouch_Look;
+    private readonly InputAction m_PlayerMovementTouch_Jump;
+    private readonly InputAction m_PlayerMovementTouch_Action;
     private readonly InputAction m_PlayerMovementTouch_Pause;
+    private readonly InputAction m_PlayerMovementTouch_PrimaryTouchContact;
+    private readonly InputAction m_PlayerMovementTouch_PrimaryTouchPosition;
     public struct PlayerMovementTouchActions
     {
         private @InputPlayer m_Wrapper;
         public PlayerMovementTouchActions(@InputPlayer wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Action => m_Wrapper.m_PlayerMovementTouch_Action;
-        public InputAction @Jump => m_Wrapper.m_PlayerMovementTouch_Jump;
-        public InputAction @Look => m_Wrapper.m_PlayerMovementTouch_Look;
+        public InputAction @Aim => m_Wrapper.m_PlayerMovementTouch_Aim;
         public InputAction @Move => m_Wrapper.m_PlayerMovementTouch_Move;
+        public InputAction @Look => m_Wrapper.m_PlayerMovementTouch_Look;
+        public InputAction @Jump => m_Wrapper.m_PlayerMovementTouch_Jump;
+        public InputAction @Action => m_Wrapper.m_PlayerMovementTouch_Action;
         public InputAction @Pause => m_Wrapper.m_PlayerMovementTouch_Pause;
+        public InputAction @PrimaryTouchContact => m_Wrapper.m_PlayerMovementTouch_PrimaryTouchContact;
+        public InputAction @PrimaryTouchPosition => m_Wrapper.m_PlayerMovementTouch_PrimaryTouchPosition;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovementTouch; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -529,40 +617,58 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface != null)
             {
-                @Action.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAction;
-                @Action.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAction;
-                @Action.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAction;
-                @Jump.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnJump;
-                @Look.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnLook;
-                @Look.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnLook;
-                @Look.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnLook;
+                @Aim.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAim;
                 @Move.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnMove;
+                @Look.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnLook;
+                @Jump.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnJump;
+                @Action.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAction;
+                @Action.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAction;
+                @Action.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnAction;
                 @Pause.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPause;
+                @PrimaryTouchContact.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPrimaryTouchContact;
+                @PrimaryTouchContact.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPrimaryTouchContact;
+                @PrimaryTouchContact.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPrimaryTouchContact;
+                @PrimaryTouchPosition.started -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPrimaryTouchPosition;
+                @PrimaryTouchPosition.performed -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPrimaryTouchPosition;
+                @PrimaryTouchPosition.canceled -= m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface.OnPrimaryTouchPosition;
             }
             m_Wrapper.m_PlayerMovementTouchActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Action.started += instance.OnAction;
-                @Action.performed += instance.OnAction;
-                @Action.canceled += instance.OnAction;
-                @Jump.started += instance.OnJump;
-                @Jump.performed += instance.OnJump;
-                @Jump.canceled += instance.OnJump;
-                @Look.started += instance.OnLook;
-                @Look.performed += instance.OnLook;
-                @Look.canceled += instance.OnLook;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Look.started += instance.OnLook;
+                @Look.performed += instance.OnLook;
+                @Look.canceled += instance.OnLook;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Action.started += instance.OnAction;
+                @Action.performed += instance.OnAction;
+                @Action.canceled += instance.OnAction;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @PrimaryTouchContact.started += instance.OnPrimaryTouchContact;
+                @PrimaryTouchContact.performed += instance.OnPrimaryTouchContact;
+                @PrimaryTouchContact.canceled += instance.OnPrimaryTouchContact;
+                @PrimaryTouchPosition.started += instance.OnPrimaryTouchPosition;
+                @PrimaryTouchPosition.performed += instance.OnPrimaryTouchPosition;
+                @PrimaryTouchPosition.canceled += instance.OnPrimaryTouchPosition;
             }
         }
     }
@@ -596,10 +702,13 @@ public class @InputPlayer : IInputActionCollection, IDisposable
     }
     public interface IPlayerMovementTouchActions
     {
-        void OnAction(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
-        void OnLook(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnAction(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnPrimaryTouchContact(InputAction.CallbackContext context);
+        void OnPrimaryTouchPosition(InputAction.CallbackContext context);
     }
 }

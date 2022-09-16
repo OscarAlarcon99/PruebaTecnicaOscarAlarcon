@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[DefaultExecutionOrder(-1)]
 public class CharacterInput : MonoBehaviour
 {
+    public Vector2 deltaMoveAim;
+
     /// <summary>
     /// variable que almacena el valor tomado por el input system sobre movimiento del jugador. 
     /// </summary>
@@ -50,6 +53,12 @@ public class CharacterInput : MonoBehaviour
 
     public bool touch;
 
+    public delegate void StartTouch(Vector2 position, float time);
+    public event StartTouch OnStartTouch;
+
+    public delegate void EndTouch(Vector2 position, float time);
+    public event EndTouch OnEndTouch;
+
     /// <summary>
     /// Funcion que desactiva funcionalidad de input. 
     /// </summary>
@@ -73,6 +82,7 @@ public class CharacterInput : MonoBehaviour
         if (touch)
         {
             deltaMove = input.PlayerMovementTouch.Move.ReadValue<Vector2>();
+            //deltaMoveAim = input.PlayerMovementTouch.Aim.ReadValue<Vector2>();
             deltaLook = input.PlayerMovementTouch.Look.ReadValue<Vector2>();
         }
         else
@@ -169,6 +179,55 @@ public class CharacterInput : MonoBehaviour
         }
     }
 
+
+    public void CallAimTouch(InputAction.CallbackContext context)
+    {
+        Debug.Log("ssss");
+
+        if (context.started)
+        {
+            Debug.Log("started");
+        }
+
+        if (context.performed)
+        {
+            Debug.Log("performed");
+
+        }
+
+        if (context.canceled)
+        {
+            Debug.Log("Cancel");
+        }
+
+    }
+    
+    public void StartTouchPrimary(InputAction.CallbackContext ctx)
+    {
+        if (OnStartTouch != null)
+        {
+            OnStartTouch(Utils.ScreenToWorld(Camera.main, input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>()), (float)ctx.startTime);
+        }
+    }
+    public void EndTouchPrimary(InputAction.CallbackContext ctx)
+    {
+        if (OnEndTouch != null)
+        {
+            OnEndTouch(Utils.ScreenToWorld(Camera.main, input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>()), (float)ctx.time);
+        }
+    }
+
+    public Vector2 PrimaryPosition()
+    {
+        return Utils.ScreenToWorld(Camera.main, input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>());
+    }
+
+
+    private void Start()
+    {
+        input.PlayerMovementTouch.PrimaryTouchContact.started += ctx => StartTouchPrimary(ctx);
+        input.PlayerMovementTouch.PrimaryTouchContact.canceled += ctx => EndTouchPrimary(ctx);
+    }
 
     private void OnEnable()
     {

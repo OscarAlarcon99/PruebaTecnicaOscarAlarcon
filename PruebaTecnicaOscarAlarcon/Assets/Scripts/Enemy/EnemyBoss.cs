@@ -27,9 +27,17 @@ public class EnemyBoss : Singleton<EnemyBoss>
     bool isActive;
     [SerializeField]
     float distanceBetweenTarget;
+    [SerializeField]
+    GameObject StartPositon;
 
+    private float minDistanceTime;
+    private float midleDistanceTime;
+    private float longDistanceTime;
+    [SerializeField]
     private float minDistance;
+    [SerializeField]
     private float midleDistance;
+    [SerializeField]
     private float longDistance;
 
     public Quaternion DefaultRotation { get; set; }
@@ -53,6 +61,8 @@ public class EnemyBoss : Singleton<EnemyBoss>
         if (isActive)
         {
             currentState.Update();
+            ChangeHeight();
+            DistanceBetweenTarget = Vector3.Distance(StartPositon.transform.position, Player.Instance.transform.position);
         }
         else
         {
@@ -70,21 +80,18 @@ public class EnemyBoss : Singleton<EnemyBoss>
     {
         if (Target != null)
         {
-           DistanceBetweenTarget = Vector3.Distance(this.transform.position, Player.Instance.transform.position);
-
-            if (distanceBetweenTarget < 7)
+            if (distanceBetweenTarget < 6)
             {
-                ChangeFiringRate(minDistance);
+                ChangeFiringRate(minDistanceTime);
             }
-            else if (distanceBetweenTarget < 15)
+            else if (distanceBetweenTarget < 12)
             {
-                ChangeFiringRate(midleDistance);
+                ChangeFiringRate(midleDistanceTime);
             }
             else
             {
-                ChangeFiringRate(longDistance);
+                ChangeFiringRate(longDistanceTime);
             }
-
         }
     }
     void ChangeFiringRate(float value)
@@ -92,6 +99,24 @@ public class EnemyBoss : Singleton<EnemyBoss>
         anim.SetFloat("VelAttack", value);
     }
 
+    void ChangeHeight()
+    {
+        if (Target != null)
+        {
+            if (distanceBetweenTarget < 10)
+            {
+                transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, minDistance , 3f), transform.position.z);
+            }
+            else if (distanceBetweenTarget < 15)
+            {
+                transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, midleDistance, 3f), transform.position.z);
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, longDistance, 3f), transform.position.z);
+            }
+        }
+    }
     public bool CanSeeTarget(Vector3 direction, Vector3 origin, string tag)
     {
         RaycastHit hit;
@@ -153,23 +178,23 @@ public class EnemyBoss : Singleton<EnemyBoss>
         switch (lifes)
         {
             case 1:
-                minDistance = 0.5f;
-                midleDistance = 0.25f;
-                longDistance = 0;
+                minDistanceTime = 0.5f;
+                midleDistanceTime = 0.25f;
+                longDistanceTime = 0;
                 rotationSpeed = 200;
                 break;
 
             case 2:
-                minDistance = 0.75f;
-                midleDistance = 0.5f;
-                longDistance = 0.25f;
+                minDistanceTime = 0.75f;
+                midleDistanceTime = 0.5f;
+                longDistanceTime = 0.25f;
                 rotationSpeed = 300;
                 break;
 
             case 3:
-                minDistance = 1;
-                midleDistance = 0.75f;
-                longDistance = 0.5f;
+                minDistanceTime = 1;
+                midleDistanceTime = 0.75f;
+                longDistanceTime = 0.5f;
                 rotationSpeed = 400;
                 break;
         }

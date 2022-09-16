@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475d46d60b328004f9bee1aa05203b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDestroy: 6
+  timeDestroy: 3
   collider: {fileID: 3075053565013520194}
   particula: {fileID: 6248907835711054227}
   body: {fileID: 8578972288085489722}

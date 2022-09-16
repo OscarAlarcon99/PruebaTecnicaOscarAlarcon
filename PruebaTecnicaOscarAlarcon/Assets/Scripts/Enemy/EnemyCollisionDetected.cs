@@ -10,16 +10,16 @@ public class EnemyCollisionDetected : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //SoundManager.Instance.PlayNewSound("EnemyDamage");
             Debug.Log("fueaqui");
             EnemyBoss.Instance.healt.TakeDamage(damage);
+            SoundManager.Instance.PlayNewSound("EnemyDamage");
         }
 
 
         if (other.gameObject.tag == "PlayerBullet")
         {
-            //SoundManager.Instance.PlayNewSound("EnemyDamage");
             other.gameObject.GetComponent<Cañon>().Explotar();
+            SoundManager.Instance.PlayNewSound("EnemyDamage");
         }
     }
 }

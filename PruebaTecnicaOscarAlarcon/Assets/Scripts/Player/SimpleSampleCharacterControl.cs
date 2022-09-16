@@ -27,7 +27,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// <summary>
     /// Controlador de camara third person cinemachine
     /// </summary>
-    [SerializeField] private CinemachineControllerCamera cinmachineCamera;
+    [SerializeField] private CinemachineControllerCamera cinemachineCamera;
     /// <summary>
     /// objeto que referencia el horizonte del juego
     /// </summary>
@@ -36,6 +36,8 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// Variable que almacena la anterior velocidad vertical
     /// </summary>
     private float m_currentV = 0;
+    private float m_currentH2;
+
     /// <summary>
     /// Variable que almacena la anterior velocidad horizontal
     /// </summary>
@@ -85,13 +87,24 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     private List<Collider> m_collisions = new List<Collider>();
     public bool aimUse;
     public CannonController shooting;
-
+    [SerializeField]
+    private float m_moveSpeedV;
+    [SerializeField]
+    private float m_moveSpeedH;
+    [SerializeField]
+    private float m_turnSpeed;
+    
+    public Transform tr;
+    private Vector3 oldMovementVelocity;
+    [SerializeField] private float smoothingFactor;
     private void Awake()
     {
         base.Awake();
         //Inicializacion de variables si no han sido agregadas en el inspector
         if (!m_animator) { gameObject.GetComponent<Animator>(); }
         if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
+        Cursor.visible = false;
+        tr = transform;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -201,10 +214,15 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         if (!Player.Instance.IsActive)
             return;
 
-        if (cinmachineCamera.freeLook.gameObject.activeInHierarchy)
-        {
-            cinmachineCamera.InputCamera();
-        }
+        //if (Player.Instance.transform.position != Vector3.zero)
+        //{
+        //    HoldAnimations(gameObject.transform.position);
+        //}
+        //else
+        //{
+        //    HoldAnimations(Vector3.zero);
+        //}
+        cinemachineCamera.InputCamera();
 
         //Validacion para cuando entra input de salto
         if (!m_jumpInput && characterPlayerInput.IsJumpKeyPressed())
@@ -225,8 +243,23 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
     private void FixedUpdate()
     {
-        //Actualizacion de direccion de momiviento
-        DirectUpdate();
+        if (!Player.Instance.IsActive)
+            return;
+        
+        //DirectUpdate();
+        //TankUpdate();
+
+        if (!aimUse)
+        {
+            //Actualizacion de direccion de momiviento
+            TankUpdate();
+            //DirectUpdate();
+        }
+        else
+        {
+            TankUpdate();
+        }
+
         #region Control de Salto
 
         // envio a controlador de animacion del bool si toca el piso 
@@ -241,11 +274,71 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         #endregion
     }
 
+    private void TankUpdate()
+    {
+        float h = characterPlayerInput.GetHorizontalCameraInput();
+        float  h2 = characterPlayerInput.GetHorizontalMovementInput();
+        float v = characterPlayerInput.GetVerticalMovementInput();
+
+        
+        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
+        m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
+        m_currentH2 = Mathf.Lerp(m_currentH2, h2, Time.deltaTime * m_interpolation);
+
+        transform.position += tr.forward * m_currentV * m_moveSpeedV * Time.deltaTime;
+        transform.position += tr.right * m_currentH2 * m_moveSpeedH * Time.deltaTime;
+        transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
+
+
+        m_animator.SetFloat("MoveSpeedV", Mathf.Lerp(v, 1.2f ,Time.deltaTime) , 0.3f,Time.deltaTime);
+        m_animator.SetFloat("MoveSpeedH", Mathf.Lerp(h2, 1.2f, Time.deltaTime), 0.3f, Time.deltaTime);
+        m_animator.SetBool("Aim", aimUse);
+
+        JumpingAndLanding();
+    }
+
+    public void HoldAnimations(Vector3 _velocity)
+    {
+        Debug.Log(_velocity);
+
+        //Split up velocity;
+        Vector3 _horizontalVelocity = VectorMath.RemoveDotVector(_velocity, tr.up);
+        Vector3 _verticalVelocity = _velocity - _horizontalVelocity;
+
+        //Smooth horizontal velocity for fluid animation;
+        _horizontalVelocity = Vector3.Lerp(oldMovementVelocity, _horizontalVelocity, smoothingFactor);
+        oldMovementVelocity = _horizontalVelocity;
+
+        m_animator.SetFloat("MoveSpeedV", _verticalVelocity.magnitude * VectorMath.GetDotProduct(_verticalVelocity.normalized, tr.up));
+        m_animator.SetFloat("MoveSpeedH", _horizontalVelocity.magnitude);
+        m_animator.SetBool("Aim", aimUse);
+    }
+
+    public void SendAnimationReaction(int index)
+    {
+        if (index == 0)
+        {
+            m_animator.SetTrigger("Damage");
+        }
+
+        if (index == 1)
+        {
+            m_animator.SetTrigger("Attack");           
+        }
+
+        if (index == 2)
+        {
+            m_animator.SetTrigger("Dead");
+        }
+    }
+
     public void CallAim(InputAction.CallbackContext context)
     {
-
         if (context.started)
         {
+            Vector3 test = Camera.main.transform.localEulerAngles;
+            transform.localEulerAngles = new Vector3(0f, test.y, 0);
+            shooting.firstPosition = shooting.transform.localEulerAngles;
             aimUse = true;
         }
 
@@ -257,20 +350,20 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         if (context.canceled)
         {
             aimUse = false;
-            shooting.Shooting();
+            SendAnimationReaction(1);
         }
 
         if (Player.Instance.Ammo > 0 && aimUse)
         {
-
             shooting.line.enabled = true;
         }
         else
         {
+            shooting.transform.localEulerAngles = shooting.firstPosition;
             shooting.line.enabled = false;
         }
-
     }
+
 
     /// <summary>
     /// Funcion encargada de calcular y aplicar nueva direccion al jugador
@@ -284,14 +377,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
         //referencia de posicion de maincamera
         Transform camera = Camera.main.transform;
-
-        // Validacion de lectura de input mientras camina
-        if (characterPlayerInput.IsActionPressed())
-        {
-            // multiplicacion por escala de velocidad caminando 
-            v *= m_walkScale;
-            h *= m_walkScale;
-        }
 
         // Interpolacion en la variacion  de la velocidad capatada por el input 
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
@@ -319,7 +404,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
             transform.position += m_currentDirection * moveSpeed * Time.deltaTime;
             
             //envio de velocidad del movimiento a controlador de animaciones
-            m_animator.SetFloat("MoveSpeed", direction.magnitude);
+            m_animator.SetFloat("MoveSpeedV", direction.magnitude);
         }
 
         // llamada del salto y caida 

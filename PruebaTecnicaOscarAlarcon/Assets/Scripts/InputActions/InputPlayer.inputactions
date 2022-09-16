@@ -47,11 +47,11 @@
                 },
                 {
                     "name": "Aim",
-                    "type": "Button",
-                    "id": "c71f4488-ef3d-401a-91d3-71dcf30d6d22",
+                    "type": "PassThrough",
+                    "id": "76c2356e-d1bf-4507-b6ee-e344825a9f91",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -211,11 +211,33 @@
                 },
                 {
                     "name": "",
-                    "id": "a4b17962-c542-47f3-be20-0da65922d688",
-                    "path": "<Mouse>/leftButton",
+                    "id": "7e913d89-b2b8-4dba-b8ed-9adfb75760f5",
+                    "path": "<Keyboard>/x",
                     "interactions": "Hold",
                     "processors": "",
                     "groups": "PC",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96f39206-d0c7-425a-b6bc-4ad8f7b01378",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c826bf6-679d-40b4-b3bc-41cf68cea7a6",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
                     "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -227,28 +249,12 @@
             "id": "caba91e4-fa62-4b53-a933-88c0e97a615b",
             "actions": [
                 {
-                    "name": "Action",
-                    "type": "Button",
-                    "id": "276f3ea7-1aed-4884-881f-1519a7670ba5",
+                    "name": "Aim",
+                    "type": "PassThrough",
+                    "id": "0ebccb81-fac7-44a7-bb5c-761ed063422f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
-                },
-                {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "cce602c9-ab0a-403a-9f75-6568cd95a5ce",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "070c0a0f-afd4-41a9-bfc6-adfa69d8162e",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
                 },
                 {
                     "name": "Move",
@@ -259,15 +265,77 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "81489641-94f8-46ce-a323-021aa50bd031",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "cce602c9-ab0a-403a-9f75-6568cd95a5ce",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Action",
+                    "type": "Button",
+                    "id": "276f3ea7-1aed-4884-881f-1519a7670ba5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "2933f839-32cc-40b4-9d4c-95019b0a0411",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "PrimaryTouchContact",
+                    "type": "PassThrough",
+                    "id": "070c0a0f-afd4-41a9-bfc6-adfa69d8162e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "PrimaryTouchPosition",
+                    "type": "PassThrough",
+                    "id": "3ebf30f2-e53b-4912-8ee7-7cd1ed9c12a9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
+                {
+                    "name": "",
+                    "id": "ff4b9df6-c8c2-4b2a-9e10-ba06c11ce2ba",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6aac434d-9d0e-4779-b5ec-24fb558dfa08",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
                 {
                     "name": "",
                     "id": "16821d19-e3c9-4a7d-bde9-7d2a84230c83",
@@ -281,23 +349,23 @@
                 },
                 {
                     "name": "",
-                    "id": "61e8d380-cf03-4c3a-a605-db457e0ad6f3",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "b8e23a70-4169-4c06-aaca-1bcff61be7b7",
+                    "path": "<Touchscreen>/primaryTouch/press",
                     "interactions": "",
-                    "processors": "StickDeadzone",
-                    "groups": "GamePad",
-                    "action": "Look",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryTouchContact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ff4b9df6-c8c2-4b2a-9e10-ba06c11ce2ba",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "ee87174a-c1ae-4206-9b38-3e5a85154a85",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "groups": "GamePad",
-                    "action": "Jump",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -314,12 +382,23 @@
                 },
                 {
                     "name": "",
-                    "id": "6aac434d-9d0e-4779-b5ec-24fb558dfa08",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
+                    "id": "c0dbaa24-5a9d-4f6e-9b63-457a64600745",
+                    "path": "<Gamepad>/select",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "GamePad",
-                    "action": "Pause",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee54954c-cfc2-4f7b-a5e0-7ae47c4cb9d8",
+                    "path": "<Touchscreen>/primaryTouch/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryTouchPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
