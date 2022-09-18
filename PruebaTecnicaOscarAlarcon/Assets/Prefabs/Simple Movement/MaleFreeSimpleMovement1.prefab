@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &776475960
 Transform:
   m_ObjectHideFlags: 0
@@ -1075,7 +1075,7 @@ GameObject:
   - component: {fileID: 1873155338}
   - component: {fileID: 1131069249}
   - component: {fileID: 686384965}
-  - component: {fileID: 1466367331}
+  - component: {fileID: 752851850}
   m_Layer: 0
   m_Name: MaleFreeSimpleMovement1
   m_TagString: Player
@@ -1114,7 +1114,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!136 &136606663363984694
 CapsuleCollider:
@@ -1161,8 +1161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba158ff05cf30224f94bfdddec8e7635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  m_jumpForce: 6
+  moveSpeed: 4.5
+  m_jumpForce: 6.2
   characterPlayerInput: {fileID: 6079978147798756200}
   m_animator: {fileID: 95665039525092722}
   m_rigidBody: {fileID: 54084939265967506}
@@ -1176,11 +1176,10 @@ MonoBehaviour:
   m_wasGrounded: 0
   aimUse: 0
   shooting: {fileID: 4526135335498206876}
-  m_moveSpeedV: 2.2
-  m_moveSpeedH: 1
+  m_moveSpeedV: 4
+  m_moveSpeedH: 2
   m_turnSpeed: 6
   tr: {fileID: 4549428611729446}
-  smoothingFactor: 0.5
 --- !u!114 &6079978147798756200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,12 +1192,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6e6666a798d7341b783df7a65d9603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deltaMoveAim: {x: 0, y: 0}
   deltaMove: {x: 0, y: 0}
   deltaLook: {x: 0, y: 0}
   sensitivityX: 10
   sensitivityY: 1
-  touch: 0
+  touch: 1
 --- !u!114 &1873155338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,7 +1210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeAim: {fileID: 0}
-  lookspeed: 15
+  lookspeed: 0
 --- !u!114 &1131069249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,11 +1224,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: 3
-  Ammo: 200
+  Ammo: 0
   currentTimeSpawn: 0
   timeToSpawn: 4
-  isActive: 1
-  shootController: {fileID: 0}
+  isActive: 0
+  shootController: {fileID: 4526135335498206876}
+  letrero: {fileID: 0}
+  targetPoint: {fileID: 1653474441657256}
 --- !u!114 &686384965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,14 +1341,14 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerMovement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1466367331
+--- !u!114 &752851850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824340380413090}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 008ac38885982b84b9ed6bed3b374bb8, type: 3}
   m_Name: 
@@ -1754,7 +1754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4526135334365081943, guid: 58c5085605159ae43b535fa21f8d3474, type: 3}
       propertyPath: BlastPower
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8396266200730655069, guid: 58c5085605159ae43b535fa21f8d3474, type: 3}
       propertyPath: numPoints

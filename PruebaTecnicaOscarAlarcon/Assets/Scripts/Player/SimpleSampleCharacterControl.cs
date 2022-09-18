@@ -15,7 +15,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// <summary>
     /// Controlador de animaciones
     /// </summary>
-    public  CharacterInput characterPlayerInput; 
+    public CharacterInput characterPlayerInput;
     /// <summary>
     /// Controlador de animaciones
     /// </summary>
@@ -27,7 +27,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// <summary>
     /// Controlador de camara third person cinemachine
     /// </summary>
-    [SerializeField] private CinemachineControllerCamera cinemachineCamera;
+    public CinemachineControllerCamera cinemachineCamera;
     /// <summary>
     /// objeto que referencia el horizonte del juego
     /// </summary>
@@ -93,10 +93,9 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     private float m_moveSpeedH;
     [SerializeField]
     private float m_turnSpeed;
-    
+
     public Transform tr;
-    private Vector3 oldMovementVelocity;
-    [SerializeField] private float smoothingFactor;
+
     private void Awake()
     {
         base.Awake();
@@ -126,7 +125,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
                     // agregar colision 
                     m_collisions.Add(collision.collider);
                 }
-                
+
                 // esta tocando el piso 
                 m_isGrounded = true;
             }
@@ -176,12 +175,12 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
                 // quitar colision 
                 m_collisions.Remove(collision.collider);
             }
-            
+
             //validar si no hay ningun contacto
-            if (m_collisions.Count == 0) 
+            if (m_collisions.Count == 0)
             {
                 //ya no esta en el piso
-                m_isGrounded = false; 
+                m_isGrounded = false;
             }
         }
 
@@ -191,17 +190,17 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     private void OnCollisionExit(Collision collision)
     {
         #region Contacto salida con el suelo
-        
+
         //validacion de que ya no sigue la anterior colision
         if (m_collisions.Contains(collision.collider))
         {
             //quitar la anterior colision
             m_collisions.Remove(collision.collider);
         }
-        
+
         //validar si no hay ningun contacto
-        if (m_collisions.Count == 0) 
-        { 
+        if (m_collisions.Count == 0)
+        {
             //ya no esta en el piso
             m_isGrounded = false;
         }
@@ -214,14 +213,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         if (!Player.Instance.IsActive)
             return;
 
-        //if (Player.Instance.transform.position != Vector3.zero)
-        //{
-        //    HoldAnimations(gameObject.transform.position);
-        //}
-        //else
-        //{
-        //    HoldAnimations(Vector3.zero);
-        //}
         cinemachineCamera.InputCamera();
 
         //Validacion para cuando entra input de salto
@@ -243,9 +234,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
     private void FixedUpdate()
     {
-        if (!Player.Instance.IsActive)
-            return;
-        
         //DirectUpdate();
         //TankUpdate();
 
@@ -268,7 +256,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         //Actualizacion de bool de aire
         m_wasGrounded = m_isGrounded;
 
-       // ajuste de variable de input a falso 
+        // ajuste de variable de input a falso 
         m_jumpInput = false;
 
         #endregion
@@ -277,10 +265,10 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     private void TankUpdate()
     {
         float h = characterPlayerInput.GetHorizontalCameraInput();
-        float  h2 = characterPlayerInput.GetHorizontalMovementInput();
+        float h2 = characterPlayerInput.GetHorizontalMovementInput();
         float v = characterPlayerInput.GetVerticalMovementInput();
 
-        
+
         m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
         m_currentH2 = Mathf.Lerp(m_currentH2, h2, Time.deltaTime * m_interpolation);
@@ -290,28 +278,11 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
 
 
-        m_animator.SetFloat("MoveSpeedV", Mathf.Lerp(v, 1.2f ,Time.deltaTime) , 0.3f,Time.deltaTime);
-        m_animator.SetFloat("MoveSpeedH", Mathf.Lerp(h2, 1.2f, Time.deltaTime), 0.3f, Time.deltaTime);
+        m_animator.SetFloat("MoveSpeedV", v, 0.1f, Time.deltaTime);
+        m_animator.SetFloat("MoveSpeedH", h2, 0.1f, Time.deltaTime);
         m_animator.SetBool("Aim", aimUse);
 
         JumpingAndLanding();
-    }
-
-    public void HoldAnimations(Vector3 _velocity)
-    {
-        Debug.Log(_velocity);
-
-        //Split up velocity;
-        Vector3 _horizontalVelocity = VectorMath.RemoveDotVector(_velocity, tr.up);
-        Vector3 _verticalVelocity = _velocity - _horizontalVelocity;
-
-        //Smooth horizontal velocity for fluid animation;
-        _horizontalVelocity = Vector3.Lerp(oldMovementVelocity, _horizontalVelocity, smoothingFactor);
-        oldMovementVelocity = _horizontalVelocity;
-
-        m_animator.SetFloat("MoveSpeedV", _verticalVelocity.magnitude * VectorMath.GetDotProduct(_verticalVelocity.normalized, tr.up));
-        m_animator.SetFloat("MoveSpeedH", _horizontalVelocity.magnitude);
-        m_animator.SetBool("Aim", aimUse);
     }
 
     public void SendAnimationReaction(int index)
@@ -321,7 +292,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
             m_animator.SetTrigger("Damage");
         }
 
-        if (index == 1)
+        if (index == 1 && Player.Instance.Ammo > 0)
         {
             m_animator.SetTrigger("Attack");           
         }

@@ -17,8 +17,8 @@ public class Cañon : MonoBehaviour
 
     public void Explotar()
     {
-        body.GetComponent<MeshRenderer>().enabled = false;
-        body.GetComponent<SphereCollider>().enabled = false;
+        body.SetActive(false);
+        body.GetComponentInParent<SphereCollider>().enabled = false;
         collider.enabled = true;
         particula.gameObject.SetActive(true);
         Destroy(rigidbody);

@@ -1,25 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SwipeController : MonoBehaviour
 {
+    [SerializeField]
     private CharacterInput characterInput;
 
     [SerializeField]
     float minmumDistance = .2f;
     [SerializeField]
     float maximumTime = 1f;
-
     Vector3 startPosition;
-    float startTime;
     Vector3 endPosition;
-    float endTime;
-
-    void Awake()
-    {
-        characterInput = SimpleSampleCharacterControl.Instance.characterPlayerInput;
-    }
 
     void OnEnable()
     {
@@ -34,26 +27,16 @@ public class SwipeController : MonoBehaviour
 
     }
 
-    void SwipeStart(Vector2 position, float time)
+    public void SwipeStart(Vector2 position)
     {
         startPosition = position;
-        startTime = time;
+        SimpleSampleCharacterControl.Instance.characterPlayerInput.fingerPositionImage.gameObject.SetActive(true);
     }
 
-    void SwipeEnd(Vector2 position, float time)
+    public void SwipeEnd(Vector2 position)
     {
         endPosition = position;
-        endTime = time;
-
-        DetectedSwipe();
+        SimpleSampleCharacterControl.Instance.characterPlayerInput.fingerPositionImage.gameObject.SetActive(false);
     }
-    
-    void DetectedSwipe()
-    {
-        if (Vector3.Distance(startPosition, endPosition)>= minmumDistance &&
-            (endTime - startTime) <= maximumTime)
-        {
-
-        }
-    }
+ 
 }

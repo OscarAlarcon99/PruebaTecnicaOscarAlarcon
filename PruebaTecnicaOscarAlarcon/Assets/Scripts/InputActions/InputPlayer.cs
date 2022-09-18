@@ -31,7 +31,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""f61e2d36-6be0-4395-91dc-db8e2db38078"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""InvertVector2(invertX=false)"",
                     ""interactions"": """"
                 },
                 {
@@ -282,7 +282,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""81489641-94f8-46ce-a323-021aa50bd031"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""InvertVector2(invertX=false)"",
                     ""interactions"": ""Press(behavior=2)""
                 },
                 {
@@ -315,7 +315,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""id"": ""070c0a0f-afd4-41a9-bfc6-adfa69d8162e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""PrimaryTouchPosition"",
@@ -323,7 +323,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""id"": ""3ebf30f2-e53b-4912-8ee7-7cd1ed9c12a9"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -384,6 +384,17 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""4cf80deb-bb24-4a7b-a6e1-c02bb6bbe439"",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""0a8bdd66-e38d-4c84-ae25-4ef7efdaf351"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
@@ -406,7 +417,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ee54954c-cfc2-4f7b-a5e0-7ae47c4cb9d8"",
+                    ""id"": ""e336703d-f382-4363-9be4-49e416c60b2a"",
                     ""path"": ""<Touchscreen>/primaryTouch/position"",
                     ""interactions"": """",
                     ""processors"": """",

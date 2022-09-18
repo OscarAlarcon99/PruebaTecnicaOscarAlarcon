@@ -39,6 +39,8 @@ public class EnemyBoss : Singleton<EnemyBoss>
     private float midleDistance;
     [SerializeField]
     private float longDistance;
+    [SerializeField]
+    private float speedMoveZ;
 
     public Quaternion DefaultRotation { get; set; }
     public Transform Target { get; set; }
@@ -94,6 +96,7 @@ public class EnemyBoss : Singleton<EnemyBoss>
             }
         }
     }
+
     void ChangeFiringRate(float value)
     {
         anim.SetFloat("VelAttack", value);
@@ -103,20 +106,21 @@ public class EnemyBoss : Singleton<EnemyBoss>
     {
         if (Target != null)
         {
-            if (distanceBetweenTarget < 10)
+            if (distanceBetweenTarget < 18)
             {
-                transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, minDistance , 3f), transform.position.z);
+                transform.position = Vector3.MoveTowards(transform.position, Vector3.Lerp(transform.position, new Vector3(StartPositon.transform.position.x, minDistance, StartPositon.transform.position.z), speedMoveZ * Time.deltaTime), transform.position.z);
             }
-            else if (distanceBetweenTarget < 15)
+            else if (distanceBetweenTarget < 25)
             {
-                transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, midleDistance, 3f), transform.position.z);
+                transform.position = Vector3.MoveTowards(transform.position, Vector3.Lerp(transform.position, new Vector3(StartPositon.transform.position.x, midleDistance, StartPositon.transform.position.z), speedMoveZ * Time.deltaTime), transform.position.z);
             }
-            else
+            else if (distanceBetweenTarget < 30)
             {
-                transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, longDistance, 3f), transform.position.z);
+                transform.position = Vector3.MoveTowards(transform.position, Vector3.Lerp(transform.position, new Vector3(StartPositon.transform.position.x, longDistance, StartPositon.transform.position.z), speedMoveZ * Time.deltaTime), transform.position.z);
             }
         }
     }
+
     public bool CanSeeTarget(Vector3 direction, Vector3 origin, string tag)
     {
         RaycastHit hit;
@@ -136,8 +140,6 @@ public class EnemyBoss : Singleton<EnemyBoss>
 
     public void ChangeState(State newState)
     {
-        Debug.Log("Start New State : " + newState);
-
         if (newState != null)
         {
             newState.Exit();

@@ -2,13 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
-public class CharacterInput : MonoBehaviour
+public class CharacterInput : Singleton<CharacterInput>
 {
-    public Vector2 deltaMoveAim;
-
     /// <summary>
     /// variable que almacena el valor tomado por el input system sobre movimiento del jugador. 
     /// </summary>
@@ -18,7 +18,7 @@ public class CharacterInput : MonoBehaviour
     /// variable que almacena el valor tomado por el input system sobre la vista del jugador. 
     /// </summary>
     public Vector2 deltaLook;
-
+    public Vector2 fingerPosition;
     /// <summary>
     /// variable que almacena el componente encargado del input system del jugador. 
     /// </summary>
@@ -53,12 +53,14 @@ public class CharacterInput : MonoBehaviour
 
     public bool touch;
 
-    public delegate void StartTouch(Vector2 position, float time);
+    public delegate void StartTouch(Vector2 position);
     public event StartTouch OnStartTouch;
 
-    public delegate void EndTouch(Vector2 position, float time);
+    public delegate void EndTouch(Vector2 position);
     public event EndTouch OnEndTouch;
 
+    public Camera maincamera;
+    public Image fingerPositionImage;
     /// <summary>
     /// Funcion que desactiva funcionalidad de input. 
     /// </summary>
@@ -82,8 +84,19 @@ public class CharacterInput : MonoBehaviour
         if (touch)
         {
             deltaMove = input.PlayerMovementTouch.Move.ReadValue<Vector2>();
-            //deltaMoveAim = input.PlayerMovementTouch.Aim.ReadValue<Vector2>();
             deltaLook = input.PlayerMovementTouch.Look.ReadValue<Vector2>();
+
+            if (EventSystem.current.IsPointerOverGameObject(PointerInputModule.kFakeTouchesId))
+            {
+                fingerPosition = input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>();
+            }
+
+
+            if (fingerPositionImage.gameObject.activeInHierarchy)
+            {
+                fingerPositionImage.rectTransform.position = fingerPosition;
+            }
+
         }
         else
         {
@@ -204,24 +217,34 @@ public class CharacterInput : MonoBehaviour
     
     public void StartTouchPrimary(InputAction.CallbackContext ctx)
     {
-        if (OnStartTouch != null)
+        if (OnStartTouch != null || Player.Instance.IsActive)
         {
-            OnStartTouch(Utils.ScreenToWorld(Camera.main, input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>()), (float)ctx.startTime);
+            if (EventSystem.current.IsPointerOverGameObject(PointerInputModule.kFakeTouchesId))
+            {
+                Debug.Log("Clicked on the UI");
+                return;
+            }
+            else
+            {
+                OnStartTouch(Utils.ScreenToWorld(maincamera, input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>()));
+            }
         }
     }
     public void EndTouchPrimary(InputAction.CallbackContext ctx)
     {
         if (OnEndTouch != null)
         {
-            OnEndTouch(Utils.ScreenToWorld(Camera.main, input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>()), (float)ctx.time);
+            if (EventSystem.current.IsPointerOverGameObject(PointerInputModule.kFakeTouchesId))
+            {
+                Debug.Log("Clicked on the UI");
+                return;
+            }
+            else
+            {
+                OnEndTouch(Utils.ScreenToWorld(maincamera, input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>()));
+            }
         }
     }
-
-    public Vector2 PrimaryPosition()
-    {
-        return Utils.ScreenToWorld(Camera.main, input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>());
-    }
-
 
     private void Start()
     {

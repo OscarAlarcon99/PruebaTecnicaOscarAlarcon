@@ -55,6 +55,7 @@ public class ControllerSettings : MonoBehaviour
     public void SetBoolStateUITouch(Toggle toggle)
     {
         ScenesManager.Instance.touchdBuild = toggle.isOn;
+        ScenesManager.Instance.EditTouchSystem(ScenesManager.Instance.touchdBuild);
     }
 
 

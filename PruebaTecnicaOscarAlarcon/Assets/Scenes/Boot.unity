@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 7341198609881663153}
     - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
       propertyPath: songs.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
       propertyPath: songs.Array.data[0]
@@ -329,6 +329,14 @@ PrefabInstance:
       propertyPath: songs.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: 4f3d9e5e8007acd458b17aacb211e1bf, type: 2}
+    - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
+      propertyPath: songs.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 77f9672cc4bc8a24095bca37e9ba596f, type: 2}
+    - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
+      propertyPath: songs.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: a9021901e485b3545a95697664a652d4, type: 2}
     - target: {fileID: 390729616, guid: 4e58b512f103446499b15d7d5aaf606e, type: 3}
       propertyPath: songIcons.Array.size
       value: 2
@@ -453,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 1278497065, guid: 93685f976e4877a48a3d6d9e9479a77c, type: 3}
       propertyPath: ui.videoPanel
       value: 
-      objectReference: {fileID: 7341198609881663152}
+      objectReference: {fileID: 0}
     - target: {fileID: 1278497065, guid: 93685f976e4877a48a3d6d9e9479a77c, type: 3}
       propertyPath: systemPrefabs.Array.data[0]
       value: 
@@ -527,6 +535,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 250714051, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798637264, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.998748
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798637264, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.998748
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798637264, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.998748
+      objectReference: {fileID: 0}
+    - target: {fileID: 574461481805637990, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_PointerBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2149168956173384349, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.12308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2149168956173384349, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.12308
+      objectReference: {fileID: 0}
+    - target: {fileID: 2149168956173384349, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.12308
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120424336315884131, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.12308
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120424336315884131, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.12308
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120424336315884131, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.12308
+      objectReference: {fileID: 0}
     - target: {fileID: 7341198611391413490, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -615,7 +667,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 155598361, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
 --- !u!114 &7341198609881663149 stripped
 MonoBehaviour:
@@ -636,11 +689,6 @@ Canvas:
 --- !u!1 &7341198609881663151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7341198609985123939, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
-  m_PrefabInstance: {fileID: 7341198609881663148}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7341198609881663152 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7341198611332975099, guid: fed3f50f9e09a0e45bcac4c0a09d66f0, type: 3}
   m_PrefabInstance: {fileID: 7341198609881663148}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7341198609881663153 stripped

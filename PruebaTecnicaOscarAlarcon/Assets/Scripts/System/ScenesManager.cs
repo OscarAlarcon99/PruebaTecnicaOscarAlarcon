@@ -165,10 +165,6 @@ public class ScenesManager : Singleton<ScenesManager>
         Application.Quit();
     }
     
-    void Update()
-    {
-        EditTouchSystem(touchdBuild);
-    }
 
     /// <summary>
     /// Método que cambia configuracion a touch.
@@ -182,7 +178,6 @@ public class ScenesManager : Singleton<ScenesManager>
         else
         {
             ui.touchPanel.SetActive(false);
-
         }
     }
 

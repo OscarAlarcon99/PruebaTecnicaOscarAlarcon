@@ -10,12 +10,14 @@ public class Player : Singleton<Player>
     public float timeToSpawn;
     public bool isActive;
     public CannonController shootController;
+    public GameObject letrero;
+    public GameObject targetPoint;
     public bool IsActive { get => isActive; set => isActive = value; }
 
     void Start()
     {
         shootController = GetComponentInChildren<CannonController>();
-        lifes = 3;
+        lifes = 2;
         currentTimeSpawn = timeToSpawn;
     }
 
@@ -77,13 +79,16 @@ public class Player : Singleton<Player>
                 lifes++;
             }
             //reproducir sonido
+
+            SoundManager.Instance.PlayNewSound("GetItem");
             Destroy(other.gameObject);
         }
 
         if (other.CompareTag("TimeItem"))
         {
             ManagerGame.Instance.timer.RestaurarTiempo(10f);
-            //reproducir sonido
+            StartCoroutine(Letrero());
+            SoundManager.Instance.PlayNewSound("GetItem");
             Destroy(other.gameObject);
         }
 
@@ -92,8 +97,15 @@ public class Player : Singleton<Player>
             Ammo++;
             Ammo++;
             Ammo++;
-            //reproducir sonido
             Destroy(other.gameObject);
+            SoundManager.Instance.PlayNewSound("GetItem"); 
         }
+    }
+
+    IEnumerator Letrero()
+    {
+        letrero.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        letrero.SetActive(false);
     }
 }

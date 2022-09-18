@@ -9,6 +9,9 @@ public class CinemachineControllerCamera : MonoBehaviour
     public float lookspeed;
     public void InputCamera()
     {
+        if (!Player.Instance.IsActive)
+            return;
+
         if (SimpleSampleCharacterControl.Instance.aimUse)
         {
             //freeAim.m_XAxis.Value += SimpleSampleCharacterControl.Instance.characterPlayerInput.GetHorizontalCameraInput() * lookspeed * Time.deltaTime;

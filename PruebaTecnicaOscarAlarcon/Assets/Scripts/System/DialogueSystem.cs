@@ -7,6 +7,8 @@ using TMPro;
 
 public class DialogueSystem : Singleton<DialogueSystem>
 {
+    public List<Dialogue> dialogues = new List<Dialogue>();
+
     Queue<string> sentences;
     Dialogue newDialogue;
     int index;
@@ -29,9 +31,9 @@ public class DialogueSystem : Singleton<DialogueSystem>
         }
     }
 
-    public void StartNewDialogue(Dialogue dialogue)
+    public void StartNewDialogue(int index)
     {
-        newDialogue = dialogue;
+        newDialogue = dialogues[index];
         ChangeStateBoxDialogue();
         StartDialogue();
         inPlaying = true;
@@ -72,14 +74,19 @@ public class DialogueSystem : Singleton<DialogueSystem>
     IEnumerator TypeSentence(string sentence)
     {
         textBox.text = "";
-        yield return new WaitForSeconds(0.01f);
-        textBox.text += sentence;
-        yield return new WaitForSeconds(3f);
-        panelDialogue.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        
+        foreach (char letter in sentence.ToCharArray())
+        {
+            textBox.text += letter;
+            yield return null;
+        }
     }
 
     public void EndDialogue()
     {
+        Debug.Log(22220);
+        panelDialogue.SetActive(false);
         index = 0;
         inPlaying = false;
         sentences.Clear();

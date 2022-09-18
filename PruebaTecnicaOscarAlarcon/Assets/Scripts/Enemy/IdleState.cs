@@ -34,7 +34,7 @@ public class IdleState : State
     {
         if (other.CompareTag("Player"))
         {
-            mainParent.Target = other.transform;
+            mainParent.Target = Player.Instance.targetPoint.transform;
             mainParent.ChangeState(new FindTargetState());
         }
     }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ManagerGame : Singleton<ManagerGame>
 {
@@ -15,20 +16,26 @@ public class ManagerGame : Singleton<ManagerGame>
     public Timer timer;
     public int indexItems;
     GameObject currentSpawnPoint;
-
-
-
+    public GameObject panelWinner;
+    public GameObject panelLosse;
+    public TMP_Text puntuacion;
+    public TimeLineRutine timeLine;
+    bool startGame;
     void Start()
     {
         StartCoroutine(StartGame());
-        InvokeRepeating("Spawn", 7, 20);
+        SoundManager.Instance.PlayNewSound("BackGroundGame");
     }
 
     public void Update()
     {
-        DamagePlayerUI();
-        DamageEnemyUI();
         Game();
+
+        if (startGame)
+        {
+            DamagePlayerUI();
+            DamageEnemyUI();
+        }
     }
 
     public void Spawn()
@@ -38,27 +45,26 @@ public class ManagerGame : Singleton<ManagerGame>
         if (currentSpawnPoint != pointSpawn[Ramdom])
         {
             currentSpawnPoint = pointSpawn[Ramdom];
-
             Instantiate(Items[indexItems], currentSpawnPoint.transform.position, Quaternion.identity);
             indexItems++;
         }
-
     }
-
 
     public void Game()
     {
         valueAmmo.text = Player.Instance.Ammo.ToString();
+        TimeSpan time = TimeSpan.FromSeconds(timer.currentTime);
     }
 
     IEnumerator StartGame()
     {
+        timeLine.Play(0);
+        yield return new WaitUntil(() => !timeLine.StatePlayable(0));
         yield return new WaitForSeconds(2f);
-        timer.StartTimer();
+        timeLine.Play(0);
+        yield return new WaitUntil(() => !timeLine.StatePlayable(0));
+        SimpleSampleCharacterControl.Instance.cinemachineCamera.freeAim.gameObject.SetActive(true);
         gameUI[0].SetActive(true);
-        Player.Instance.IsActive = true;
-        EnemyBoss.Instance.IsActive = true;
-        SoundManager.Instance.PlayNewSound("BackGroundGame");
     }
 
     public void DamageEnemyUI()
@@ -106,13 +112,58 @@ public class ManagerGame : Singleton<ManagerGame>
 
     public void FinishGame()
     {
+        gameUI[0].SetActive(false);
         timer.timerActive = false;
-        sliderEnemyUI.gameObject.SetActive(false);
         EnemyBoss.Instance.IsActive = false;
         Player.Instance.IsActive = false;
 
-        //Player.Instance.gameObject.SetActive(false);
+        if (Player.Instance.isActive)
+        {
+            StartCoroutine(Winner());
+        }
+        else
+        {
+            StartCoroutine(failed());
+        }
+    }
+
+    IEnumerator Winner()
+    {
+        panelWinner.SetActive(true);
+        yield return new WaitForSeconds(10f);
         ScenesManager.Instance.isLoad = true;
         ScenesManager.Instance.LoadLevel("MainMenu");
     }
+
+    IEnumerator failed()
+    {
+        panelLosse.SetActive(true);
+
+        yield return new WaitForSeconds(10f);
+        ScenesManager.Instance.isLoad = true;
+        ScenesManager.Instance.LoadLevel("MainMenu");
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(StartMatch());
+        }
+    }
+
+    IEnumerator StartMatch()
+    {
+        gameUI[0].SetActive(false);
+        Player.Instance.IsActive = false;
+        timeLine.Play(1);
+        yield return new WaitUntil(() => !timeLine.StatePlayable(1)); 
+        startGame = true;
+        timer.StartTimer();
+        ScenesManager.Instance.EditTouchSystem(true);
+        Player.Instance.IsActive = true;
+        EnemyBoss.Instance.IsActive = true;
+        InvokeRepeating("Spawn", 3, 20);
+        Destroy(gameObject.GetComponent<BoxCollider>());
+    }
+
 }
