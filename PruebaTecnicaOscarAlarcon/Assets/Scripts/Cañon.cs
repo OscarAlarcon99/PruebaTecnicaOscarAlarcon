@@ -5,36 +5,37 @@ using UnityEngine;
 public class Cañon : MonoBehaviour
 {
     public float timeDestroy;
-    public BoxCollider collider;
     public GameObject particula;
-    public GameObject body;
-    public Rigidbody rigidbody;
+    public Coroutine coroutine;
 
     void Start()
     {
-        Invoke("Explotar", timeDestroy);
+        coroutine = StartCoroutine(ManualExplotion());
+    }
+
+    IEnumerator ManualExplotion()
+    {
+        yield return new WaitForSeconds(timeDestroy);
+        Explotar();
     }
 
     public void Explotar()
     {
-        body.SetActive(false);
-        body.GetComponentInParent<SphereCollider>().enabled = false;
-        collider.enabled = true;
-        particula.gameObject.SetActive(true);
-        Destroy(rigidbody);
-        Destroy(this.gameObject, 2f);
+        Destroy(Instantiate(particula, transform.position, Quaternion.identity), 2f);
+        Destroy(this.gameObject);
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("EnemyBody"))
+        if (other.CompareTag("EnemyBody") || other.CompareTag("Player") || other.CompareTag("EnemyBullet"))
         {
-            EnemyBoss.Instance.healt.TakeDamage(20);
-        }
+            if (other.CompareTag("EnemyBullet"))
+            {
+                Destroy(other);
+            }
 
-        if (other.CompareTag("Player"))
-        {
-            Player.Instance.Damage();
+            StopCoroutine(coroutine);
+            Explotar();
         }
     }
 }

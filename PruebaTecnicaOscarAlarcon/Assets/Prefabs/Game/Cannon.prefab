@@ -47,15 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616151d78b83f0c47bfbf2d1fe844f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.5
+  rotationSpeed: 1
   BlastPower: 20
-  line: {fileID: 0}
-  Cannonball: {fileID: 8578972288085489722, guid: 36976d0913d4d2143b7ec2195ab339e4, type: 3}
+  Cannonball: {fileID: 8578972288085489722, guid: 36976d0913d4d2143b7ec2195ab339e4,
+    type: 3}
   ShotPoint: {fileID: 2363300796860622522}
-  Explosion: {fileID: 2771661109152740402, guid: bfe66bccbf1de304695a06472a63da73, type: 3}
-  HorizontalRotation: 0
-  VerticalRotation: 0
-  firstPosition: {x: 0, y: 0, z: 0}
+  Explosion: {fileID: 2771661109152740402, guid: bfe66bccbf1de304695a06472a63da73,
+    type: 3}
 --- !u!120 &3495213464726825826
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -71,7 +69,6 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

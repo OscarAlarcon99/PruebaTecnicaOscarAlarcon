@@ -307,14 +307,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     {
         if (context.started)
         {
-            Vector3 test = Camera.main.transform.localEulerAngles;
-            transform.localEulerAngles = new Vector3(0f, test.y, 0);
-            shooting.firstPosition = shooting.transform.localEulerAngles;
-            aimUse = true;
-        }
-
-        if (context.performed)
-        {
             aimUse = true;
         }
 
@@ -330,7 +322,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         }
         else
         {
-            shooting.transform.localEulerAngles = shooting.firstPosition;
             shooting.line.enabled = false;
         }
     }

@@ -9,21 +9,23 @@ public class CannonController : MonoBehaviour
     public LineRenderer line;
     public GameObject Cannonball;
     public Transform ShotPoint;
+
     public GameObject Explosion;
-    [SerializeField] float HorizontalRotation;
-    [SerializeField] float VerticalRotation;
-    public Vector3 firstPosition;
-    [SerializeField] float angleYMin;
-    [SerializeField] float angleYMax;
+    public  Vector3 firstPosition;
+    void Start()
+    {
+        firstPosition = transform.localEulerAngles;
+    }
 
     private void Update()
     {
         if (SimpleSampleCharacterControl.Instance.aimUse)
         {
-            //VerticalRotation = Mathf.Clamp(SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput(), angleYMin, angleYMax);
-            VerticalRotation = SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput();
+            float HorizontalRotation = 0;
+            float VericalRotation = SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput();
+
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles +
-           new Vector3(0, HorizontalRotation * rotationSpeed, VerticalRotation * rotationSpeed));
+                new Vector3(0, HorizontalRotation * rotationSpeed, VericalRotation * rotationSpeed));
         }
     }
 
@@ -32,7 +34,7 @@ public class CannonController : MonoBehaviour
         if (Player.Instance.Ammo > 0 && Player.Instance.IsActive && Player.Instance.currentTimeSpawn > Player.Instance.timeToSpawn)
         {
             Player.Instance.Ammo--;
-
+            
             GameObject CreatedCannonball = Instantiate(Cannonball, ShotPoint.position, ShotPoint.rotation);
             CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower;
 
@@ -41,7 +43,10 @@ public class CannonController : MonoBehaviour
 
             // Shake the screen for added effect
             Screenshake.ShakeAmount = 5;
+            transform.localEulerAngles = firstPosition;
             Player.Instance.currentTimeSpawn = 0;
         }
     }
+
+
 }

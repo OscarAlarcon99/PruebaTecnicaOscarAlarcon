@@ -154,7 +154,6 @@ public class ManagerGame : Singleton<ManagerGame>
     IEnumerator StartMatch()
     {
         gameUI[0].SetActive(false);
-        Player.Instance.IsActive = false;
         timeLine.Play(1);
         yield return new WaitUntil(() => !timeLine.StatePlayable(1)); 
         startGame = true;
@@ -162,7 +161,7 @@ public class ManagerGame : Singleton<ManagerGame>
         ScenesManager.Instance.EditTouchSystem(true);
         Player.Instance.IsActive = true;
         EnemyBoss.Instance.IsActive = true;
-        InvokeRepeating("Spawn", 3, 20);
+        InvokeRepeating("Spawn", 3f, 20);
         Destroy(gameObject.GetComponent<BoxCollider>());
     }
 

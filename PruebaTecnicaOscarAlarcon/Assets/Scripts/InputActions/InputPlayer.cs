@@ -65,6 +65,14 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""LookAim"",
+                    ""type"": ""Value"",
+                    ""id"": ""0e6c497e-7ff8-49fc-9607-d6d78c599185"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""InvertVector2(invertX=false)"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -254,6 +262,17 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2cf568f2-b102-4d8d-9a3e-acf205ea6679"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -373,28 +392,6 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ee87174a-c1ae-4206-9b38-3e5a85154a85"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": ""StickDeadzone"",
-                    ""groups"": ""GamePad"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4cf80deb-bb24-4a7b-a6e1-c02bb6bbe439"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""GamePad"",
-                    ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""0a8bdd66-e38d-4c84-ae25-4ef7efdaf351"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
@@ -417,7 +414,18 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e336703d-f382-4363-9be4-49e416c60b2a"",
+                    ""id"": ""74d943a2-4ef3-49b2-baeb-733351e7ef3f"",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6e8c70a-8674-4bf7-997b-5df7421fab69"",
                     ""path"": ""<Touchscreen>/primaryTouch/position"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -467,6 +475,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         m_PlayerMovement_Action = m_PlayerMovement.FindAction("Action", throwIfNotFound: true);
         m_PlayerMovement_Pause = m_PlayerMovement.FindAction("Pause", throwIfNotFound: true);
         m_PlayerMovement_Aim = m_PlayerMovement.FindAction("Aim", throwIfNotFound: true);
+        m_PlayerMovement_LookAim = m_PlayerMovement.FindAction("LookAim", throwIfNotFound: true);
         // PlayerMovementTouch
         m_PlayerMovementTouch = asset.FindActionMap("PlayerMovementTouch", throwIfNotFound: true);
         m_PlayerMovementTouch_Aim = m_PlayerMovementTouch.FindAction("Aim", throwIfNotFound: true);
@@ -532,6 +541,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerMovement_Action;
     private readonly InputAction m_PlayerMovement_Pause;
     private readonly InputAction m_PlayerMovement_Aim;
+    private readonly InputAction m_PlayerMovement_LookAim;
     public struct PlayerMovementActions
     {
         private @InputPlayer m_Wrapper;
@@ -542,6 +552,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         public InputAction @Action => m_Wrapper.m_PlayerMovement_Action;
         public InputAction @Pause => m_Wrapper.m_PlayerMovement_Pause;
         public InputAction @Aim => m_Wrapper.m_PlayerMovement_Aim;
+        public InputAction @LookAim => m_Wrapper.m_PlayerMovement_LookAim;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -569,6 +580,9 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 @Aim.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnAim;
                 @Aim.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnAim;
                 @Aim.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnAim;
+                @LookAim.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnLookAim;
+                @LookAim.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnLookAim;
+                @LookAim.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnLookAim;
             }
             m_Wrapper.m_PlayerMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -591,6 +605,9 @@ public class @InputPlayer : IInputActionCollection, IDisposable
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
+                @LookAim.started += instance.OnLookAim;
+                @LookAim.performed += instance.OnLookAim;
+                @LookAim.canceled += instance.OnLookAim;
             }
         }
     }
@@ -710,6 +727,7 @@ public class @InputPlayer : IInputActionCollection, IDisposable
         void OnAction(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+        void OnLookAim(InputAction.CallbackContext context);
     }
     public interface IPlayerMovementTouchActions
     {

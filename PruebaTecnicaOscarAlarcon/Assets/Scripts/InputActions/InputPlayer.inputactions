@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "LookAim",
+                    "type": "Value",
+                    "id": "0e6c497e-7ff8-49fc-9607-d6d78c599185",
+                    "expectedControlType": "Vector2",
+                    "processors": "InvertVector2(invertX=false)",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -241,6 +249,17 @@
                     "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2cf568f2-b102-4d8d-9a3e-acf205ea6679",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -360,28 +379,6 @@
                 },
                 {
                     "name": "",
-                    "id": "ee87174a-c1ae-4206-9b38-3e5a85154a85",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "StickDeadzone",
-                    "groups": "GamePad",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4cf80deb-bb24-4a7b-a6e1-c02bb6bbe439",
-                    "path": "<Touchscreen>/primaryTouch/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "GamePad",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0a8bdd66-e38d-4c84-ae25-4ef7efdaf351",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -404,7 +401,18 @@
                 },
                 {
                     "name": "",
-                    "id": "e336703d-f382-4363-9be4-49e416c60b2a",
+                    "id": "74d943a2-4ef3-49b2-baeb-733351e7ef3f",
+                    "path": "<Touchscreen>/primaryTouch/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6e8c70a-8674-4bf7-997b-5df7421fab69",
                     "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",

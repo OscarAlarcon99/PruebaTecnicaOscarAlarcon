@@ -27,4 +27,9 @@ public class CinemachineControllerCamera : MonoBehaviour
 
         }
     }
+
+    public float GetHeightCamera()
+    {
+        return freeAim.m_YAxis.Value;
+    }
 }

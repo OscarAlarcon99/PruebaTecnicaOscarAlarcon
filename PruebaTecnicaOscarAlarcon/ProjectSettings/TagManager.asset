@@ -13,6 +13,7 @@ TagManager:
   - HealtItem
   - AmmoItem
   - EnemyBody
+  - Explotion
   layers:
   - Default
   - TransparentFX

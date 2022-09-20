@@ -8,17 +8,9 @@ public class EnemyCollisionDetected : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Explotion")
         {
-            Debug.Log("fueaqui");
             EnemyBoss.Instance.healt.TakeDamage(damage);
-            SoundManager.Instance.PlayNewSound("EnemyDamage");
-        }
-
-
-        if (other.gameObject.tag == "PlayerBullet")
-        {
-            other.gameObject.GetComponent<Cañon>().Explotar();
             SoundManager.Instance.PlayNewSound("EnemyDamage");
         }
     }

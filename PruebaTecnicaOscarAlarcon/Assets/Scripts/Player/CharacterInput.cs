@@ -18,6 +18,7 @@ public class CharacterInput : Singleton<CharacterInput>
     /// variable que almacena el valor tomado por el input system sobre la vista del jugador. 
     /// </summary>
     public Vector2 deltaLook;
+    public Vector2 deltaLookAim;
     public Vector2 fingerPosition;
     /// <summary>
     /// variable que almacena el componente encargado del input system del jugador. 
@@ -68,7 +69,7 @@ public class CharacterInput : Singleton<CharacterInput>
     {
         _horizontalInput = 0;
         _verticalInput = 0;
-        deltaMove = deltaLook = Vector2.zero;
+        deltaMove = deltaLookAim = deltaLook = Vector2.zero;
     }
     /// <summary>
     /// Funcion que recibe valor de input de movimiento. 
@@ -84,10 +85,16 @@ public class CharacterInput : Singleton<CharacterInput>
         if (touch)
         {
             deltaMove = input.PlayerMovementTouch.Move.ReadValue<Vector2>();
-            deltaLook = input.PlayerMovementTouch.Look.ReadValue<Vector2>();
+            deltaLookAim = input.PlayerMovement.LookAim.ReadValue<Vector2>();
 
-            if (EventSystem.current.IsPointerOverGameObject(PointerInputModule.kFakeTouchesId))
+            if (EventSystem.current.IsPointerOverGameObject())
             {
+                Debug.Log("sssssssssssssssssssssss");
+                return;
+            }
+            else
+            {
+                deltaLook = input.PlayerMovementTouch.Look.ReadValue<Vector2>();
                 fingerPosition = input.PlayerMovementTouch.PrimaryTouchPosition.ReadValue<Vector2>();
             }
 
@@ -96,7 +103,6 @@ public class CharacterInput : Singleton<CharacterInput>
             {
                 fingerPositionImage.rectTransform.position = fingerPosition;
             }
-
         }
         else
         {
@@ -184,7 +190,14 @@ public class CharacterInput : Singleton<CharacterInput>
     {
         if (touch)
         {
-            return _verticalCameraInput = deltaLook.y * sensitivityY;
+            if (SimpleSampleCharacterControl.Instance.aimUse)
+            {
+                return _verticalCameraInput = deltaLookAim.y * sensitivityY;
+            }
+            else
+            {
+                return _verticalCameraInput = deltaLook.y * sensitivityY;
+            }
         }
         else
         {
@@ -192,29 +205,6 @@ public class CharacterInput : Singleton<CharacterInput>
         }
     }
 
-
-    public void CallAimTouch(InputAction.CallbackContext context)
-    {
-        Debug.Log("ssss");
-
-        if (context.started)
-        {
-            Debug.Log("started");
-        }
-
-        if (context.performed)
-        {
-            Debug.Log("performed");
-
-        }
-
-        if (context.canceled)
-        {
-            Debug.Log("Cancel");
-        }
-
-    }
-    
     public void StartTouchPrimary(InputAction.CallbackContext ctx)
     {
         if (OnStartTouch != null || Player.Instance.IsActive)
@@ -222,7 +212,6 @@ public class CharacterInput : Singleton<CharacterInput>
             if (EventSystem.current.IsPointerOverGameObject(PointerInputModule.kFakeTouchesId))
             {
                 Debug.Log("Clicked on the UI");
-                return;
             }
             else
             {
@@ -237,7 +226,6 @@ public class CharacterInput : Singleton<CharacterInput>
             if (EventSystem.current.IsPointerOverGameObject(PointerInputModule.kFakeTouchesId))
             {
                 Debug.Log("Clicked on the UI");
-                return;
             }
             else
             {
