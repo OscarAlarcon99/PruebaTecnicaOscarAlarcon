@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 2
-  m_FollowOffset: {x: 0, y: 0.07, z: -2.16}
+  m_FollowOffset: {x: 0, y: 1.5, z: -3.3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 2
-  m_FollowOffset: {x: 0, y: 0.07, z: -2.16}
+  m_FollowOffset: {x: 0, y: 1.5, z: -3.3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2570,7 +2570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 2
-  m_FollowOffset: {x: 0, y: 0.07, z: -2.16}
+  m_FollowOffset: {x: 0, y: 1.5, z: -3.3}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2648,7 +2648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921981969}
   m_LocalRotation: {x: 0.05819655, y: 0.63046086, z: -0.04749118, w: 0.7725781}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.00000011920929, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 678104071}
@@ -4462,6 +4462,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: d7cea1f3b6c2986438c09dcd39e35d08, type: 2}
     - {fileID: 11400000, guid: 1a32eb765945b81499906dea85f939b9, type: 2}
+    - {fileID: 11400000, guid: ef053baf54095c34a8e733f3bb951ee4, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -4489,6 +4490,20 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4449875807610539267}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Wave
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!320 &1345733103
@@ -8217,6 +8232,11 @@ PrefabInstance:
 --- !u!4 &4449875807610539266 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4449875805984052313, guid: fe9d198ba37279c4e9f1f27fa636a086, type: 3}
+  m_PrefabInstance: {fileID: 4449875807610539265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4449875807610539267 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4449875807166402703, guid: fe9d198ba37279c4e9f1f27fa636a086, type: 3}
   m_PrefabInstance: {fileID: 4449875807610539265}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7114659583672091867

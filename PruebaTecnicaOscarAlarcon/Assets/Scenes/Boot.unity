@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 171822194}
     - target: {fileID: 1278497065, guid: 93685f976e4877a48a3d6d9e9479a77c, type: 3}
       propertyPath: touchdBuild
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1278497065, guid: 93685f976e4877a48a3d6d9e9479a77c, type: 3}
       propertyPath: loadingPanel
