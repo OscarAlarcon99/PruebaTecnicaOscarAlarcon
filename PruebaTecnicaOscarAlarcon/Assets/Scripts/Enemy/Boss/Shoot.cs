@@ -9,6 +9,8 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     Transform shootPosition;
 
+
+
     public void Shooting()
     {
         Quaternion headingDirection = Quaternion.FromToRotation(projectile.transform.forward,

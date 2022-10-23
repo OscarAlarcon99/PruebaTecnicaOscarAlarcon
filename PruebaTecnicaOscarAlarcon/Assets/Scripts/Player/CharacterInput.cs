@@ -111,6 +111,7 @@ public class CharacterInput : Singleton<CharacterInput>
         }
     }
 
+
     public bool PauseKeyIsPressed()
     {
         if (touch)
