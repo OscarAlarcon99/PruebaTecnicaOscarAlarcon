@@ -1,71 +1,71 @@
 Using pre-set license
 Built from '2020.3/release' branch; Version is '2020.3.12f1 (b3b2c6512326) revision 11776710'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home Single Language; OS build 19044.2130; Version 2009; 64bit' Language: 'es' Physical Memory: 24491 MB
+OS: 'Windows 10 Home Single Language; OS build 19044.2130; Version 2009; 64bit' Language: 'es' Physical Memory: 16286 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\Unity\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/oscar/OneDrive/Documentos/UityProyects/PruebaTecnicaOscarAlarcon/PruebaTecnicaOscarAlarcon
+C:/Users/Dialfes/Documents/PruebaTecnicaOscarAlarcon/PruebaTecnicaOscarAlarcon
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64627
-Successfully changed project path to: C:/Users/oscar/OneDrive/Documentos/UityProyects/PruebaTecnicaOscarAlarcon/PruebaTecnicaOscarAlarcon
-C:/Users/oscar/OneDrive/Documentos/UityProyects/PruebaTecnicaOscarAlarcon/PruebaTecnicaOscarAlarcon
+50773
+Successfully changed project path to: C:/Users/Dialfes/Documents/PruebaTecnicaOscarAlarcon/PruebaTecnicaOscarAlarcon
+C:/Users/Dialfes/Documents/PruebaTecnicaOscarAlarcon/PruebaTecnicaOscarAlarcon
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 47.06 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 302.19 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.12f1 (b3b2c6512326)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/oscar/OneDrive/Documentos/UityProyects/PruebaTecnicaOscarAlarcon/PruebaTecnicaOscarAlarcon/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Dialfes/Documents/PruebaTecnicaOscarAlarcon/PruebaTecnicaOscarAlarcon/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce MX110 (ID=0x174e)
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics (ID=0x22b1)
     Vendor:   
-    VRAM:     2010 MB
-    Driver:   30.0.15.1278
+    VRAM:     4096 MB
+    Driver:   20.19.15.4531
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56436
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004493 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.010288 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 97.44 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 204.90 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.506 seconds
+- Completed reload, in  6.160 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009548 seconds.
+Registered in 0.019618 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 90.18 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 264.06 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.589 seconds
+- Completed reload, in  8.435 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 0.72 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.23 seconds
+Refreshing native plugins compatible for Editor in 28.49 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2011 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 163.4 MB.
-System memory in use after: 163.4 MB.
+Unloading 2010 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.9 MB.
+System memory in use after: 90.0 MB.
 
-Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 2457.
-Total: 4.490800 ms (FindLiveObjects: 0.361700 ms CreateObjectMapping: 0.153900 ms MarkObjects: 3.770900 ms  DeleteObjects: 0.201900 ms)
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2448.
+Total: 9.367600 ms (FindLiveObjects: 0.849000 ms CreateObjectMapping: 0.253100 ms MarkObjects: 7.978100 ms  DeleteObjects: 0.281800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -79,215 +79,70 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Models/Devil/Animations/Materials
-  artifactKey: Guid(27078834c11f07c49b5ee29bee2cc435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devil/Animations/Materials using Guid(27078834c11f07c49b5ee29bee2cc435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '948f8726eae178f8f0404b39f25e2209') in 0.015830 seconds 
-  Import took 0.023228 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 126.415446 seconds.
-  path: Assets/Models/Supercyan Character Pack Free Sample/Animations/Boxing (1).fbx
-  artifactKey: Guid(e650fffd69f8f1947aa286b8c44c9d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Supercyan Character Pack Free Sample/Animations/Boxing (1).fbx using Guid(e650fffd69f8f1947aa286b8c44c9d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1522a0bd5b331e939ea8442380747ad2') in 0.294139 seconds 
-  Import took 0.298634 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1518.206980 seconds.
-  path: Assets/Models/Supercyan Character Pack Free Sample/Animations/gs_oh_attack_2.anim
-  artifactKey: Guid(6f5f6160e99d3a048ba6f1af4d62e653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Supercyan Character Pack Free Sample/Animations/gs_oh_attack_2.anim using Guid(6f5f6160e99d3a048ba6f1af4d62e653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a8b7c43ec58d0c000aabc3754ef1ed') in 0.068227 seconds 
-  Import took 0.077781 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002215 seconds.
-  path: Assets/Models/Supercyan Character Pack Free Sample/Animations/gs_oh_attack_2.anim
-  artifactKey: Guid(6f5f6160e99d3a048ba6f1af4d62e653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Supercyan Character Pack Free Sample/Animations/gs_oh_attack_2.anim using Guid(6f5f6160e99d3a048ba6f1af4d62e653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a8b7c43ec58d0c000aabc3754ef1ed') in 0.038026 seconds 
-  Import took 0.046495 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.645834 seconds.
-  path: Assets/AnimatorsControllers/FreeAnimations.controller
-  artifactKey: Guid(f0669062d2a0e5a47b933bf5a992a8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AnimatorsControllers/FreeAnimations.controller using Guid(f0669062d2a0e5a47b933bf5a992a8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bd39063f0654d8acb9c496194a03672') in 0.037753 seconds 
-  Import took 0.044936 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 61.469124 seconds.
-  path: Assets/AnimatorsControllers/Arms.mask
-  artifactKey: Guid(b74874783d54d9e41a59f6da1e3b2ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AnimatorsControllers/Arms.mask using Guid(b74874783d54d9e41a59f6da1e3b2ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d7607f9c65a76653f0b2bdf4dd659c4') in 0.011681 seconds 
-  Import took 0.017336 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 23.768024 seconds.
-  path: Assets/AnimatorsControllers/FreeAnimations.controller
-  artifactKey: Guid(f0669062d2a0e5a47b933bf5a992a8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AnimatorsControllers/FreeAnimations.controller using Guid(f0669062d2a0e5a47b933bf5a992a8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f054f2e1922e901780607e5aaf5c9e59') in 0.037264 seconds 
-  Import took 0.044264 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009264 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.361 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1990 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 178.2 MB.
-System memory in use after: 178.2 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2504.
-Total: 4.666100 ms (FindLiveObjects: 0.349900 ms CreateObjectMapping: 0.149800 ms MarkObjects: 4.032300 ms  DeleteObjects: 0.131900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 382.645166 seconds.
-  path: Assets/Scripts/Enemy/EnemyCollisionDetected.cs
-  artifactKey: Guid(f97041cc913d0e041b9c9a17fc348d60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Enemy/EnemyCollisionDetected.cs using Guid(f97041cc913d0e041b9c9a17fc348d60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c36168fb8c482761842a75db514bebbf') in 0.025574 seconds 
-  Import took 0.031540 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.192170 seconds.
-  path: Assets/Scripts/Enemy/EnemyHealt.cs
-  artifactKey: Guid(cd5cd48a45c3c9d4b97ed0f47ba2f6b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Enemy/EnemyHealt.cs using Guid(cd5cd48a45c3c9d4b97ed0f47ba2f6b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a492698b7d46702394bcede561c91b6') in 0.008233 seconds 
-  Import took 0.013791 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.564793 seconds.
-  path: Assets/Scripts/Enemy/IdleState.cs
-  artifactKey: Guid(47a39ee3b69aa6a4cb05bb33ada69a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Enemy/IdleState.cs using Guid(47a39ee3b69aa6a4cb05bb33ada69a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0bc0c9856c9f9482751bf67d3a20424') in 0.007559 seconds 
-  Import took 0.013749 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.024309 seconds.
-  path: Assets/Scripts/Enemy/ManagerGame.cs
-  artifactKey: Guid(82dba317817eaa746868702a211c442b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Enemy/ManagerGame.cs using Guid(82dba317817eaa746868702a211c442b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3175faabc51a5ec26fb6e70dc4e4f5c') in 0.007368 seconds 
-  Import took 0.012546 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.064588 seconds.
-  path: Assets/Scripts/Enemy/Shoot.cs
-  artifactKey: Guid(35d0d7755b8d834459d5f0d9ee128097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Enemy/Shoot.cs using Guid(35d0d7755b8d834459d5f0d9ee128097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33123b07596c136a564398cea845ba2e') in 0.008539 seconds 
-  Import took 0.013092 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.453340 seconds.
-  path: Assets/Scripts/InputActions/InputPlayer.cs
-  artifactKey: Guid(a4ef153b5471a234f8d6be2561c9c8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/InputActions/InputPlayer.cs using Guid(a4ef153b5471a234f8d6be2561c9c8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fb1d527493d9bc7cc46c3d7f2e73fbd') in 0.007256 seconds 
-  Import took 0.015614 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.077002 seconds.
-  path: Assets/Scripts/InputActions/InputPlayer.inputactions
-  artifactKey: Guid(090799e53e88bbf498335a038b162ba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/InputActions/InputPlayer.inputactions using Guid(090799e53e88bbf498335a038b162ba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9264e55a9ed2158fd3904b1ebb8da708') in 0.029874 seconds 
-  Import took 0.035789 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006592 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.241 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1990 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 178.2 MB.
-System memory in use after: 178.3 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2507.
-Total: 2.634600 ms (FindLiveObjects: 0.225100 ms CreateObjectMapping: 0.070300 ms MarkObjects: 2.260100 ms  DeleteObjects: 0.078000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 3148.634703 seconds.
-  path: Assets/Scripts/Enemy/New Folder
-  artifactKey: Guid(d2dd5ba728ded614a98973c15b96ada7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Enemy/New Folder using Guid(d2dd5ba728ded614a98973c15b96ada7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18f15bb9f84415ae43de2d1017226cce') in 0.013585 seconds 
-  Import took 0.019687 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.022100 seconds.
   path: Assets/Scripts/Enemy/Boss
   artifactKey: Guid(d2dd5ba728ded614a98973c15b96ada7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Enemy/Boss using Guid(d2dd5ba728ded614a98973c15b96ada7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e517f84143b8e1d8df46c5707cb766a3') in 0.008491 seconds 
-  Import took 0.014394 seconds .
+Start importing Assets/Scripts/Enemy/Boss using Guid(d2dd5ba728ded614a98973c15b96ada7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4edee15160f8fd3c1c8273af1fb3a043') in 0.036734 seconds 
+  Import took 0.049923 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000771 seconds.
+  path: Assets/AnimatorsControllers
+  artifactKey: Guid(0d1fae4873741304788b45efbb47be4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AnimatorsControllers using Guid(0d1fae4873741304788b45efbb47be4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4cfe0609a0168dee6394fc531562b27') in 0.065345 seconds 
+  Import took 0.075207 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000684 seconds.
+  path: Assets/AnimatorsControllers/Arms.mask
+  artifactKey: Guid(b74874783d54d9e41a59f6da1e3b2ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AnimatorsControllers/Arms.mask using Guid(b74874783d54d9e41a59f6da1e3b2ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7e1e7977b8406abc20db463ed00f973') in 0.246951 seconds 
+  Import took 0.257482 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000670 seconds.
+  path: Assets/AnimatorsControllers/Player.controller
+  artifactKey: Guid(8b9a677f24793ba45bdc27a1dab7745e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AnimatorsControllers/Player.controller using Guid(8b9a677f24793ba45bdc27a1dab7745e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9b63788cb5707bba65d77d64686e2c5') in 0.272607 seconds 
+  Import took 0.285760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.472743 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(ed6e5dee4d01f094984cc11fc052939d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(ed6e5dee4d01f094984cc11fc052939d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3224a9b7e308de57d256ff91976f4bf2') in 0.055138 seconds 
+  Import took 0.076587 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.161405 seconds.
+  path: Assets/Scenes/DemoScene.unity
+  artifactKey: Guid(a33ada31778ec4b4fa84304c895bd20a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/DemoScene.unity using Guid(a33ada31778ec4b4fa84304c895bd20a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca6f0f59d69985a5e1afaeeb50197df0') in 0.064221 seconds 
+  Import took 0.078266 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004504 seconds.
+Registered in 0.021915 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.53 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.196 seconds
+- Completed reload, in  6.277 seconds
 Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.35 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1990 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 178.2 MB.
-System memory in use after: 178.3 MB.
+Unloading 1986 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.5 MB.
 
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2510.
-Total: 3.177200 ms (FindLiveObjects: 0.237300 ms CreateObjectMapping: 0.087500 ms MarkObjects: 2.771700 ms  DeleteObjects: 0.078800 ms)
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2451.
+Total: 9.740000 ms (FindLiveObjects: 1.175900 ms CreateObjectMapping: 0.633400 ms MarkObjects: 7.851500 ms  DeleteObjects: 0.073600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -297,29 +152,363 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 134.910838 seconds.
+  path: Assets/Scenes/DemoScene 1.unity
+  artifactKey: Guid(5f02150757265054ea94a33ff4c88fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/DemoScene 1.unity using Guid(5f02150757265054ea94a33ff4c88fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7ec5884f72c56add772e4926426cef1') in 0.130280 seconds 
+  Import took 0.141683 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.319300 seconds.
+  path: Assets/Scenes/DialfesDemoScene.unity
+  artifactKey: Guid(5f02150757265054ea94a33ff4c88fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/DialfesDemoScene.unity using Guid(5f02150757265054ea94a33ff4c88fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '608e8492bd282eba415c62bb8852d5c4') in 0.060467 seconds 
+  Import took 0.084557 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 320.535383 seconds.
+  path: Assets/Scripts/Enemy/Dialfes
+  artifactKey: Guid(69169babb8304a34b9b3b5b537bd3bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes using Guid(69169babb8304a34b9b3b5b537bd3bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92b54b84abf07e281494621c73e911fd') in 0.070389 seconds 
+  Import took 0.094545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 809.705061 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/State.cs
+  artifactKey: Guid(23482fc7b93e6ac4e8d98ebe13838a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/State.cs using Guid(23482fc7b93e6ac4e8d98ebe13838a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f7563af64568a83813113df8e520ebc') in 0.167136 seconds 
+  Import took 0.184252 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.032139 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/StateD.cs
+  artifactKey: Guid(23482fc7b93e6ac4e8d98ebe13838a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/StateD.cs using Guid(23482fc7b93e6ac4e8d98ebe13838a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1615f197cf5f95c6e39bdb7a7c8d4571') in 0.198964 seconds 
+  Import took 0.215054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 201.964867 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/State.cs
+  artifactKey: Guid(61434703f0f084c47826de4e7dae4fc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/State.cs using Guid(61434703f0f084c47826de4e7dae4fc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22f121fe4ca3465be290bc0d0a3cac7b') in 0.025872 seconds 
+  Import took 0.038271 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.117227 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Codigo3
+  artifactKey: Guid(a35b9fd1c16ed5f49b03292a6d001906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Codigo3 using Guid(a35b9fd1c16ed5f49b03292a6d001906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19ac75a198958cab78f3fdf5ae7de8eb') in 0.039853 seconds 
+  Import took 0.083144 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.751250 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/StateD1.cs
+  artifactKey: Guid(85a700f9340e1ea489e0bbcadd863cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/StateD1.cs using Guid(85a700f9340e1ea489e0bbcadd863cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ee3c2b71861e570636b9ebd9eefdc86') in 0.197083 seconds 
+  Import took 0.216266 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 59.118990 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/ScripsAdicionales
+  artifactKey: Guid(5c3d01a711a2d074e821bf4e678cf470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/ScripsAdicionales using Guid(5c3d01a711a2d074e821bf4e678cf470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90cc037746d542e88d72e6b2506b7077') in 0.081208 seconds 
+  Import took 0.101025 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.909947 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/ScripsAdicionales/Vida
+  artifactKey: Guid(27ab07b720280fd4bb88e9438f23dfa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Codigo3/ScripsAdicionales/Vida using Guid(27ab07b720280fd4bb88e9438f23dfa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '337a3afc5f409cc6f7c751338c252e7e') in 0.083180 seconds 
+  Import took 0.103234 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.525666 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA Characters
+  artifactKey: Guid(bd478387491601d46bfebb744f738b60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA Characters using Guid(bd478387491601d46bfebb744f738b60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3419e0538f5af52749e578832e56776f') in 0.076965 seconds 
+  Import took 0.091084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.971915 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA Characters/Soldado
+  artifactKey: Guid(c58a8f504c80f0a478dd60c3d7218ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA Characters/Soldado using Guid(c58a8f504c80f0a478dd60c3d7218ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25bd62f473704a71d14d5bd4b8f9a49f') in 0.105830 seconds 
+  Import took 0.123161 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000334 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA Characters/Soldado/Texturas-Personajes-Cosmic-Sea.png
+  artifactKey: Guid(a22c2ed18b2ab1e4a8d09d7ea0b74d0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA Characters/Soldado/Texturas-Personajes-Cosmic-Sea.png using Guid(a22c2ed18b2ab1e4a8d09d7ea0b74d0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2a9d1fb670abb93fdf71bdcb722d2f4') in 0.321898 seconds 
+  Import took 0.332074 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000724 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA Characters/Soldado/Catwalk Walk Forward.fbx
+  artifactKey: Guid(a00d37f06382a0f458b30fb276bf600f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA Characters/Soldado/Catwalk Walk Forward.fbx using Guid(a00d37f06382a0f458b30fb276bf600f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87aef4b0b46e05b9a18ecd66fd20694c') in 0.236821 seconds 
+  Import took 0.251643 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000629 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA Characters/Soldado/Sting-Sword-lowpoly.obj
+  artifactKey: Guid(47545680ad8aa1343a40c14d3d5e29ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA Characters/Soldado/Sting-Sword-lowpoly.obj using Guid(47545680ad8aa1343a40c14d3d5e29ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da104116f8af2a678b7f000af8dce05e') in 0.642750 seconds 
+  Import took 0.656442 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.262405 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea
+  artifactKey: Guid(1b51bc10f9b5a5640b329a310b314849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea using Guid(1b51bc10f9b5a5640b329a310b314849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20afe9379b4bc9a40e62e8ecd0426b4c') in 0.056292 seconds 
+  Import took 0.093202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.053239 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea
+  artifactKey: Guid(57e7b7b878c7de140b4cbd76e7b22307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea using Guid(57e7b7b878c7de140b4cbd76e7b22307) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '700270c2386346df879e16cbfe25b298') in 0.035848 seconds 
+  Import took 0.070668 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.121378 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales
+  artifactKey: Guid(9ee8af8bd279b9f48bb6af36bbf4e366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales using Guid(9ee8af8bd279b9f48bb6af36bbf4e366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4e3061b588dc6e7e49fdff0ca31ada7') in 0.068626 seconds 
+  Import took 0.100768 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.079144 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Codigos adicionales
+  artifactKey: Guid(3a1d390917cca4947949428361b1593a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Codigos adicionales using Guid(3a1d390917cca4947949428361b1593a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d5958f61d816a5ff40506ebba511f81') in 0.082212 seconds 
+  Import took 0.099202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.124430 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/EscenaTest
+  artifactKey: Guid(f6ccff2106675014092d7bd5d1fd4e8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/EscenaTest using Guid(f6ccff2106675014092d7bd5d1fd4e8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35e224d687e10429c20e7da047cebfc7') in 0.036696 seconds 
+  Import took 0.049593 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.775358 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Complementarios
+  artifactKey: Guid(4d0ae77919d49314f80330fc82b21e94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Complementarios using Guid(4d0ae77919d49314f80330fc82b21e94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50ecdd79b6ee37565087f47518a537df') in 0.047215 seconds 
+  Import took 0.066648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.251571 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial
+  artifactKey: Guid(5a3b4967e2f52c14b94c3fe26f113f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial using Guid(5a3b4967e2f52c14b94c3fe26f113f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c44e1fd0418dd469a2b2ab0aec58fab') in 0.031671 seconds 
+  Import took 0.041827 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.005553 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores
+  artifactKey: Guid(f32b0d5bed43d09489cc925d18e0eed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores using Guid(f32b0d5bed43d09489cc925d18e0eed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fadb044c2de2fa043412ace074be5b4a') in 0.030553 seconds 
+  Import took 0.055490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.412118 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados
+  artifactKey: Guid(e45f34bdfb1b9724a92ccba5bd5a2f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados using Guid(e45f34bdfb1b9724a92ccba5bd5a2f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd847fdfa81d8dab18e9cee34c7aa818b') in 0.117000 seconds 
+  Import took 0.127722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 59.227347 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement
+  artifactKey: Guid(e40ea0f1c4c9fa149ae455a7e31fd069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement using Guid(e40ea0f1c4c9fa149ae455a7e31fd069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '613acbad35b91ee9105992c7580bcdc9') in 0.137971 seconds 
+  Import took 0.160711 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.454132 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateAtackAI.cs
+  artifactKey: Guid(7949184cc9527d448bf973186fa7c4a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateAtackAI.cs using Guid(7949184cc9527d448bf973186fa7c4a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12268f47cdd90fcf9e5c45abd330d75d') in 0.047138 seconds 
+  Import took 0.075380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.423884 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateDeathAI.cs
+  artifactKey: Guid(493604de85378ba469db7b6cda00e5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateDeathAI.cs using Guid(493604de85378ba469db7b6cda00e5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b103e5c109a42def3df2091274d8c784') in 0.068964 seconds 
+  Import took 0.085564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.727869 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateFleeingAI.cs
+  artifactKey: Guid(fd51a990b6a8157439d3b53f5607db89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateFleeingAI.cs using Guid(fd51a990b6a8157439d3b53f5607db89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00d155a6f8fd063c91b791284236d3b8') in 0.069170 seconds 
+  Import took 0.080948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.550607 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateLoockingAI.cs
+  artifactKey: Guid(d65b32aa71aef4e4fb35f56c9e2ab30b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateLoockingAI.cs using Guid(d65b32aa71aef4e4fb35f56c9e2ab30b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0036ca0ab3e57ecec708252aacda1bdf') in 0.067206 seconds 
+  Import took 0.090738 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.860608 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateTakeDamageAI.cs
+  artifactKey: Guid(68838767ff8ac8c43b5dd4dcb82c403c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateTakeDamageAI.cs using Guid(68838767ff8ac8c43b5dd4dcb82c403c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ca2dfd32386fd88d74a9d43f03844f0') in 0.030912 seconds 
+  Import took 0.094936 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.264150 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateWavingAI.cs
+  artifactKey: Guid(ebb9efb23c74b5e4681717732ddd4d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateWavingAI.cs using Guid(ebb9efb23c74b5e4681717732ddd4d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e22a06d778d7a2acc14b8135d1c18610') in 0.065783 seconds 
+  Import took 0.084698 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.270265 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateAlertAI.cs
+  artifactKey: Guid(78f80f4594d618343a61f8019fccf8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateAlertAI.cs using Guid(78f80f4594d618343a61f8019fccf8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e60c63edb8e0b52cfa9025a690bf8be') in 0.071519 seconds 
+  Import took 0.110191 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.337963 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateAI.cs
+  artifactKey: Guid(d8b4f46bab8acb746ae040bb578dfe6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateAI.cs using Guid(d8b4f46bab8acb746ae040bb578dfe6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b4a3f3fe13f954b649d979a6d5d26eb') in 0.051641 seconds 
+  Import took 0.063832 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 81.445019 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Animaciones/Animaciones/export_6e4219b6-7162-462b-8d5d-95079d5f8a6a.fbx
+  artifactKey: Guid(be3c38fac914b2b448e1cdf18f7c5720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Animaciones/Animaciones/export_6e4219b6-7162-462b-8d5d-95079d5f8a6a.fbx using Guid(be3c38fac914b2b448e1cdf18f7c5720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9b81198f73b4f64b7aa72b4663637c8') in 1.623004 seconds 
+  Import took 1.650224 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000692 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Animaciones/Animaciones/export_54370c8d-f168-4b27-a4e8-acd2352cb16b.fbx
+  artifactKey: Guid(efdbf660fd92edf43912bffdfa48cfb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Animaciones/Animaciones/export_54370c8d-f168-4b27-a4e8-acd2352cb16b.fbx using Guid(efdbf660fd92edf43912bffdfa48cfb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d5733967624b3ceba28c2e9862baac0') in 0.567565 seconds 
+  Import took 0.623433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001399 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Animaciones/Animaciones/export_a0d1c2fa-dddd-4157-bd39-56e409da8fa6.fbx
+  artifactKey: Guid(0e9af203e8d3fdc4a889d53a83ebf6ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Animaciones/Animaciones/export_a0d1c2fa-dddd-4157-bd39-56e409da8fa6.fbx using Guid(0e9af203e8d3fdc4a889d53a83ebf6ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68b4daebebb84dc99b3a59858a4669d6') in 0.541640 seconds 
+  Import took 0.556137 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Animaciones/Animaciones/export_cda5c008-d4f6-46e1-8b3c-8dd5d5ac95b3.fbx
+  artifactKey: Guid(8d579606b6411b0478570f66b838adcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Animaciones/Animaciones/export_cda5c008-d4f6-46e1-8b3c-8dd5d5ac95b3.fbx using Guid(8d579606b6411b0478570f66b838adcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee0938fd474c72af91d1eb9a9b93605f') in 0.537420 seconds 
+  Import took 0.551706 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.039679 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Models
+  artifactKey: Guid(4f24aa079c8ac3e4db02995090a93c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Models using Guid(4f24aa079c8ac3e4db02995090a93c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30c9982dce69e412613cd869e8273f82') in 0.084640 seconds 
+  Import took 0.115135 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000693 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Models/peasant_girl.fbx
+  artifactKey: Guid(ffe0a7e9afdc6684b84188598cd88c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Models/peasant_girl.fbx using Guid(ffe0a7e9afdc6684b84188598cd88c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc7b52ceca1836e7788131fece0ed687') in 1.480205 seconds 
+  Import took 1.492994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000704 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Models/knight_d_pelegrini.fbx
+  artifactKey: Guid(ed46442d21f1c4649a95ccd49e7c6768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Models/knight_d_pelegrini.fbx using Guid(ed46442d21f1c4649a95ccd49e7c6768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c488e23867882efa49afe2cdfb1c955') in 0.413644 seconds 
+  Import took 0.426535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000553 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/Models/Enemy.prefab
+  artifactKey: Guid(dd5681b4b224a8d4b9feededf791f1fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/Models/Enemy.prefab using Guid(dd5681b4b224a8d4b9feededf791f1fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f873e8079644346e66f824ff3a3bf166') in 0.180119 seconds 
+  Import took 0.193019 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 88.863327 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Codigos adicionales/DamageDetector.cs
+  artifactKey: Guid(b088c6a80188ba34489afdcd80db8626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Codigos adicionales/DamageDetector.cs using Guid(b088c6a80188ba34489afdcd80db8626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9104219a063cbfb8e0cc5fbf7039afb') in 0.210691 seconds 
+  Import took 0.221414 seconds .
+
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004429 seconds.
+Registered in 0.274309 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.47 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.89 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.163 seconds
+- Completed reload, in  9.964 seconds
 Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.47 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 8.43 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1990 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 178.2 MB.
-System memory in use after: 178.3 MB.
+Unloading 2008 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.1 MB.
+System memory in use after: 106.2 MB.
 
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2513.
-Total: 3.089400 ms (FindLiveObjects: 0.339200 ms CreateObjectMapping: 0.119000 ms MarkObjects: 2.555800 ms  DeleteObjects: 0.073900 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2523.
+Total: 13.025400 ms (FindLiveObjects: 0.834500 ms CreateObjectMapping: 0.233100 ms MarkObjects: 11.860200 ms  DeleteObjects: 0.092600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -329,29 +518,35 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 101.374338 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Codigos adicionales/ScriptDaño.cs
+  artifactKey: Guid(1a1c5c5f7770e5d4b9c3ef1e74d1673b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Codigos adicionales/ScriptDaño.cs using Guid(1a1c5c5f7770e5d4b9c3ef1e74d1673b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e4eecb9547eead44fade4fea2f3ecab') in 1.713819 seconds 
+  Import took 1.739203 seconds .
+
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006929 seconds.
+Registered in 0.149099 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.55 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.354 seconds
+- Completed reload, in  9.778 seconds
 Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 30.77 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1990 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 178.2 MB.
-System memory in use after: 178.3 MB.
+Unloading 2009 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.1 MB.
+System memory in use after: 106.2 MB.
 
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2516.
-Total: 2.951700 ms (FindLiveObjects: 0.223900 ms CreateObjectMapping: 0.072700 ms MarkObjects: 2.533500 ms  DeleteObjects: 0.120400 ms)
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 13.326800 ms (FindLiveObjects: 0.892600 ms CreateObjectMapping: 0.258200 ms MarkObjects: 12.085600 ms  DeleteObjects: 0.084700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -361,150 +556,230 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007206 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.149 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1990 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 178.3 MB.
-System memory in use after: 178.3 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2519.
-Total: 2.959900 ms (FindLiveObjects: 0.246300 ms CreateObjectMapping: 0.092100 ms MarkObjects: 2.545000 ms  DeleteObjects: 0.075300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 68.168403 seconds.
-  path: Assets/Scripts/System/Timer.cs
-  artifactKey: Guid(fcaeb26980c6e644a9a804fe1e208c4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/System/Timer.cs using Guid(fcaeb26980c6e644a9a804fe1e208c4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a14f45eb1bfe8d7bc6625634ecd3853f') in 0.010277 seconds 
-  Import took 0.014275 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005821 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.170 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1990 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 178.3 MB.
-System memory in use after: 178.4 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 2522.
-Total: 2.845400 ms (FindLiveObjects: 0.215400 ms CreateObjectMapping: 0.068400 ms MarkObjects: 2.492800 ms  DeleteObjects: 0.067400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 8.790826 seconds.
-  path: Assets/Scripts/CannonController.cs
-  artifactKey: Guid(616151d78b83f0c47bfbf2d1fe844f26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/CannonController.cs using Guid(616151d78b83f0c47bfbf2d1fe844f26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9d008f92c8fbeaa38835751ce974ea1') in 0.013606 seconds 
-  Import took 0.022306 seconds .
+  Time since last request: 55.388534 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Codigos adicionales/ScriptDaño.cs
+  artifactKey: Guid(1a1c5c5f7770e5d4b9c3ef1e74d1673b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Codigos adicionales/ScriptDaño.cs using Guid(1a1c5c5f7770e5d4b9c3ef1e74d1673b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bb6940e0e4b2f960f07d0161e1dcec5') in 0.048312 seconds 
+  Import took 0.203660 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.825603 seconds.
-  path: Assets/Scripts/System
-  artifactKey: Guid(7c64f0c0cb86ed14084c25f1d1b3e185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/System using Guid(7c64f0c0cb86ed14084c25f1d1b3e185) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0cd7973d1034b73edf5874a54088b74') in 0.010655 seconds 
-  Import took 0.017628 seconds .
+  Time since last request: 1719.699390 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab
+  artifactKey: Guid(3e825f01c98b5584a9f6eb33c18125bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab using Guid(3e825f01c98b5584a9f6eb33c18125bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fec6fa03289dcb0376af10641d4b505') in 0.095270 seconds 
+  Import took 0.111243 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.431814 seconds.
-  path: Assets/Scripts/ScriptScriptableObjects/Sound/Sound.cs
-  artifactKey: Guid(539644442fc414a41a44712f0917ca66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/ScriptScriptableObjects/Sound/Sound.cs using Guid(539644442fc414a41a44712f0917ca66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '386af71b52601bcf36edc66679f0328a') in 0.009475 seconds 
-  Import took 0.014099 seconds .
+  Time since last request: 0.000450 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab/Soldado 32 Años.prefab
+  artifactKey: Guid(17d752885f4fdd640953f2d60eea0e5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab/Soldado 32 Años.prefab using Guid(17d752885f4fdd640953f2d60eea0e5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9ffab89a2a33199acd4597c530b3ee9') in 0.469668 seconds 
+  Import took 0.609539 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.003013 seconds.
-  path: Assets/Scripts/ScriptScriptableObjects/Sound/Sound.cs
-  artifactKey: Guid(539644442fc414a41a44712f0917ca66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/ScriptScriptableObjects/Sound/Sound.cs using Guid(539644442fc414a41a44712f0917ca66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '386af71b52601bcf36edc66679f0328a') in 0.003311 seconds 
-  Import took 0.007763 seconds .
+  Time since last request: 0.000525 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab/Aldeana .prefab
+  artifactKey: Guid(c0350192223803f44aeb96f65a4ab2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab/Aldeana .prefab using Guid(c0350192223803f44aeb96f65a4ab2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad8dd60fb238ffab67e3ebe47a7fe4f9') in 0.485831 seconds 
+  Import took 0.505264 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.637907 seconds.
-  path: Assets/Scripts/Player/SwipeController.cs
-  artifactKey: Guid(008ac38885982b84b9ed6bed3b374bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/SwipeController.cs using Guid(008ac38885982b84b9ed6bed3b374bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53e62d98225aef1c400b9684e87f06ca') in 0.010515 seconds 
-  Import took 0.016435 seconds .
+  Time since last request: 0.026295 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab/Aldeano 32.prefab
+  artifactKey: Guid(9d793e7e856583b439e5f552547fd55a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab/Aldeano 32.prefab using Guid(9d793e7e856583b439e5f552547fd55a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '386d7e82be427837a084ec0e512dcc6c') in 0.231925 seconds 
+  Import took 0.270635 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.094245 seconds.
-  path: Assets/Scripts/Player/SimpleSampleCharacterControl.cs
-  artifactKey: Guid(ba158ff05cf30224f94bfdddec8e7635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/SimpleSampleCharacterControl.cs using Guid(ba158ff05cf30224f94bfdddec8e7635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0a18fb1c7caf13d31cf518929a98bf8') in 0.014284 seconds 
-  Import took 0.020312 seconds .
+  Time since last request: 0.000686 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab/Niño .prefab
+  artifactKey: Guid(6cd0f41c177f0f949a223b42b053fcfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Prefab/Niño .prefab using Guid(6cd0f41c177f0f949a223b42b053fcfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4ef11b1e7e130881d9446863557fcd0') in 0.278424 seconds 
+  Import took 0.294470 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.148361 seconds.
-  path: Assets/Scripts/Player/Player.cs
-  artifactKey: Guid(1ae4bba73ceda1d41989ead046306b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/Player.cs using Guid(1ae4bba73ceda1d41989ead046306b1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e351bf251808e4f7ac2b04e8683cd013') in 0.009606 seconds 
-  Import took 0.016691 seconds .
+  Time since last request: 1594.521908 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/DriverNavMeshAI.cs
+  artifactKey: Guid(7242603d594e6bb46aa876b2109f903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/DriverNavMeshAI.cs using Guid(7242603d594e6bb46aa876b2109f903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7974d7861441ffd696a8033ecb02c9b7') in 0.344032 seconds 
+  Import took 0.357881 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.491602 seconds.
-  path: Assets/Scripts/Player/CinemachineControllerCamera.cs
-  artifactKey: Guid(06f714109e99c4a4cbb3b3b6fa8dc7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/CinemachineControllerCamera.cs using Guid(06f714109e99c4a4cbb3b3b6fa8dc7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b632a5b333d9be9c3a7d02a8f72e64e') in 0.008771 seconds 
-  Import took 0.014823 seconds .
+  Time since last request: 123.722608 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/MachineStateAI.cs
+  artifactKey: Guid(83147df158843ed46a692c2b456361bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/MachineStateAI.cs using Guid(83147df158843ed46a692c2b456361bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fad1b9d624bc6a1a14dad169db596492') in 0.126607 seconds 
+  Import took 0.139201 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.490243 seconds.
-  path: Assets/Scripts/Player/CharacterInput.cs
-  artifactKey: Guid(9e6e6666a798d7341b783df7a65d9603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Player/CharacterInput.cs using Guid(9e6e6666a798d7341b783df7a65d9603) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4be205bf04fcb6e57fcc8eab68e9190f') in 0.009911 seconds 
-  Import took 0.016574 seconds .
+  Time since last request: 549.215783 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/MachineStatepumpkin.cs
+  artifactKey: Guid(7ee779ca8e14a6d4d8aef4b5b6500360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/MachineStatepumpkin.cs using Guid(7ee779ca8e14a6d4d8aef4b5b6500360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d833fcb4ac61ffa97a291d9b1a46221') in 0.066390 seconds 
+  Import took 0.080353 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 339.043997 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/MachineStatepumpkin.cs
+  artifactKey: Guid(7ee779ca8e14a6d4d8aef4b5b6500360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/MachineStatepumpkin.cs using Guid(7ee779ca8e14a6d4d8aef4b5b6500360) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01443d5d120b5e21f67505fa660f5f82') in 0.029949 seconds 
+  Import took 0.043201 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 188.568268 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/DriverNavMeshPunpkim.cs
+  artifactKey: Guid(fad19dcd5ec872c49b660c509c59dfc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/DriverNavMeshPunpkim.cs using Guid(fad19dcd5ec872c49b660c509c59dfc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bedb54858d47c09f7ea64bb3148d6ad6') in 0.464765 seconds 
+  Import took 0.520183 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1161.943806 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/DriverNavMeshPunpkim.cs
+  artifactKey: Guid(fad19dcd5ec872c49b660c509c59dfc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/DriverNavMeshPunpkim.cs using Guid(fad19dcd5ec872c49b660c509c59dfc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45c5289721c00afada62554a470e243d') in 0.099415 seconds 
+  Import took 0.192664 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.983931 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/DriverVisionAI.cs
+  artifactKey: Guid(08a99ac62ffcd7441898e021a5263e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Controladores/DriverVisionAI.cs using Guid(08a99ac62ffcd7441898e021a5263e37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02a8f9036ebabdc6e4e0c8363af267a0') in 0.052571 seconds 
+  Import took 0.087369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 58.785253 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateIAPumpkin.cs
+  artifactKey: Guid(36de8cb2bf4a5b945bcc5092daf4c1b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateIAPumpkin.cs using Guid(36de8cb2bf4a5b945bcc5092daf4c1b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9f7f8b05272825b9ecfa811cb3d0e3') in 0.384678 seconds 
+  Import took 0.407332 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2868.012478 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateIAPumpkin.cs
+  artifactKey: Guid(36de8cb2bf4a5b945bcc5092daf4c1b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateIAPumpkin.cs using Guid(36de8cb2bf4a5b945bcc5092daf4c1b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dda1dd691923992b2f874d6077a2fbef') in 0.061955 seconds 
+  Import took 0.079302 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.320277 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StatePersecutedAI.cs
+  artifactKey: Guid(ede63537919a71d4294ba8989bc80543) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StatePersecutedAI.cs using Guid(ede63537919a71d4294ba8989bc80543) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43e5f70ea465678abeb43255e0143928') in 0.084611 seconds 
+  Import took 0.097036 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.547125 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StatePersecutedIAPumpkid.cs
+  artifactKey: Guid(a9862e402ad95f6429110e7eac666928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StatePersecutedIAPumpkid.cs using Guid(a9862e402ad95f6429110e7eac666928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52f1c0b01aaea59515c3957e4417ae39') in 0.143466 seconds 
+  Import took 0.168798 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1905.722517 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateAtackIAPumpkin.cs
+  artifactKey: Guid(301b39691affc29408902cf32f7724d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StateAtackIAPumpkin.cs using Guid(301b39691affc29408902cf32f7724d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61bd50ec2d0578302383035b89377cdc') in 0.287772 seconds 
+  Import took 0.312254 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 373.580398 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StatePersecutedIAPumpkid.cs
+  artifactKey: Guid(a9862e402ad95f6429110e7eac666928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StatePersecutedIAPumpkid.cs using Guid(a9862e402ad95f6429110e7eac666928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3857304ec9a8ce1e16cd34ff2a11d6b3') in 0.025508 seconds 
+  Import took 0.038500 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 69.911090 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StatePatrolAI.cs
+  artifactKey: Guid(a820f46489bce94449736b3ce53963a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Estados/StatePatrolAI.cs using Guid(a820f46489bce94449736b3ce53963a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4629d18a3c29bd2fc36b743745421d48') in 0.068111 seconds 
+  Import took 0.103966 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2509.180506 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/AnimatorManager.cs
+  artifactKey: Guid(709e1edb12d3e324bac7d779e21d7120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/AnimatorManager.cs using Guid(709e1edb12d3e324bac7d779e21d7120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50be869d429443738663a8603b4645ea') in 0.122742 seconds 
+  Import took 0.147985 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.064858 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/CharacterStats.cs
+  artifactKey: Guid(027d4a853c5fd824191dcd5705daa9fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/CharacterStats.cs using Guid(027d4a853c5fd824191dcd5705daa9fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4017bb7bdc51b0e668030aa2d39bcae6') in 1.178176 seconds 
+  Import took 1.195056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyAction.cs
+  artifactKey: Guid(353defc25d47dbb48a631f7b803ef6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyAction.cs using Guid(353defc25d47dbb48a631f7b803ef6d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d812e45dd724f308e46c65b4053dbcf') in 0.367498 seconds 
+  Import took 0.564798 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000433 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyLocomotionManager.cs
+  artifactKey: Guid(765bb8509dd7bd94fadc9bb149ae1b3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyLocomotionManager.cs using Guid(765bb8509dd7bd94fadc9bb149ae1b3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32b4ebf181ebac1c02b5a7e75ae07935') in 0.315189 seconds 
+  Import took 0.354643 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000749 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyAttackAction.cs
+  artifactKey: Guid(a7029ec043e26ce4493a058276e5fc5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyAttackAction.cs using Guid(a7029ec043e26ce4493a058276e5fc5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a26a7d7baa0e065d6913921ae5093a73') in 0.162015 seconds 
+  Import took 0.202891 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyStats.cs
+  artifactKey: Guid(ac7a74aaca3a9cb488a41ab62f7785ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyStats.cs using Guid(ac7a74aaca3a9cb488a41ab62f7785ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '958ab18c49c0acdc2e2790a4d94b7a53') in 0.131701 seconds 
+  Import took 0.149580 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000722 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyAnimatorManager.cs
+  artifactKey: Guid(e8acdf39662ea6644a5270ad0553c8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyAnimatorManager.cs using Guid(e8acdf39662ea6644a5270ad0553c8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe5929d155335990d0c0b08cd0091a43') in 0.317581 seconds 
+  Import took 0.332805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyManager.cs
+  artifactKey: Guid(b48649f90ecd73240bc7c521ac8d6abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Enemy/Dialfes/Movement/IA - Export Cosmic Sea/IA Que pelea/Codigos fundamentales/Inteligencia Artificial/Complementarios/EnemyManager.cs using Guid(b48649f90ecd73240bc7c521ac8d6abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d950589a13b966dc9033575044c1831') in 0.155961 seconds 
+  Import took 0.169007 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
