@@ -80,14 +80,13 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// Listado que almacena objetos donde toco suelo
     /// </summary>
     private List<Collider> m_collisions = new List<Collider>();
-    public bool aimUse;
-    public CannonController shooting;
     [SerializeField]
     private float m_moveSpeedV;
     [SerializeField]
     private float m_turnSpeed;
-
     public Transform tr;
+
+
 
     private void Awake()
     {
@@ -228,6 +227,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     private void FixedUpdate()
     {
         //TankUpdate();
+        HandleActions();
         DirectUpdate();
         #region Control de Salto
 
@@ -257,11 +257,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         m_animator.SetFloat("MoveSpeed", m_currentV);
 
         JumpingAndLanding();
-
-        //m_animator.SetFloat("MoveSpeedH", h2, 0.1f, Time.deltaTime);
-        m_animator.SetBool("Aim", aimUse);
-
-        JumpingAndLanding();
     }
 
     public void SendAnimationReaction(int index)
@@ -271,40 +266,44 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
             m_animator.SetTrigger("Damage");
         }
 
-        if (index == 1 && Player.Instance.Ammo > 0)
+        if (index == 1 && Player.Instance.IsActive && Player.Instance.currentTimeSpawn > Player.Instance.timeToSpawn)
         {
             m_animator.SetTrigger("Attack");           
+            Player.Instance.currentTimeSpawn = 0;
         }
 
         if (index == 2)
         {
             m_animator.SetTrigger("Dead");
         }
+
+        if (index == 3)
+        {
+            m_animator.SetBool("IsInteracting", true);
+            m_animator.SetTrigger("IsRolling");
+            m_animator.applyRootMotion = true; 
+        }
     }
 
-    public void CallAim(InputAction.CallbackContext context)
+    public void HandleActions()
     {
-        if (context.started)
+        if (characterPlayerInput.IsActionPressed())
         {
-            aimUse = true;
-        }
-
-        if (context.canceled)
-        {
-            aimUse = false;
             SendAnimationReaction(1);
         }
 
-        if (Player.Instance.Ammo > 0 && aimUse)
+        if (characterPlayerInput.IsActionPressed())
         {
-            shooting.line.enabled = true;
-        }
-        else
-        {
-            shooting.line.enabled = false;
+            SendAnimationReaction(3);
         }
     }
+    /// <summary>
+    /// Funcion encargada de activar punto de daño en la espada
+    /// </summary>
+    public void ChangeAttackPointState()
+    {
 
+    }
 
     /// <summary>
     /// Funcion encargada de calcular y aplicar nueva direccion al jugador

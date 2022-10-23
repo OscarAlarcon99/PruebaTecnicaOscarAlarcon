@@ -190,13 +190,13 @@ public class CharacterInput : Singleton<CharacterInput>
     {
         if (touch)
         {
-            if (SimpleSampleCharacterControl.Instance.aimUse)
+            if (true)
             {
-                return _verticalCameraInput = deltaLookAim.y * sensitivityY;
+                return _verticalCameraInput = deltaLook.y * sensitivityY;
             }
             else
             {
-                return _verticalCameraInput = deltaLook.y * sensitivityY;
+                return _verticalCameraInput = deltaLookAim.y * sensitivityY;
             }
         }
         else
@@ -219,6 +219,7 @@ public class CharacterInput : Singleton<CharacterInput>
             }
         }
     }
+
     public void EndTouchPrimary(InputAction.CallbackContext ctx)
     {
         if (OnEndTouch != null)
@@ -234,11 +235,11 @@ public class CharacterInput : Singleton<CharacterInput>
         }
     }
 
-    private void Start()
-    {
-        input.PlayerMovementTouch.PrimaryTouchContact.started += ctx => StartTouchPrimary(ctx);
-        input.PlayerMovementTouch.PrimaryTouchContact.canceled += ctx => EndTouchPrimary(ctx);
-    }
+    //private void Start()
+    //{
+    //    input.PlayerMovementTouch.PrimaryTouchContact.started += ctx => StartTouchPrimary(ctx);
+    //    input.PlayerMovementTouch.PrimaryTouchContact.canceled += ctx => EndTouchPrimary(ctx);
+    //}
 
     private void OnEnable()
     {

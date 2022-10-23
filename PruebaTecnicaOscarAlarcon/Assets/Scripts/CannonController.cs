@@ -19,11 +19,10 @@ public class CannonController : MonoBehaviour
 
     private void Update()
     {
-        if (SimpleSampleCharacterControl.Instance.aimUse)
+        if (true)
         {
             float HorizontalRotation = 0;
             float VericalRotation = SimpleSampleCharacterControl.Instance.characterPlayerInput.GetVerticalCameraInput();
-
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles +
                 new Vector3(0, HorizontalRotation * rotationSpeed, VericalRotation * rotationSpeed));
         }
@@ -31,10 +30,9 @@ public class CannonController : MonoBehaviour
 
     public void Shooting()
     {
-        if (Player.Instance.Ammo > 0 && Player.Instance.IsActive && Player.Instance.currentTimeSpawn > Player.Instance.timeToSpawn)
+        if (Player.Instance.IsActive && Player.Instance.currentTimeSpawn > Player.Instance.timeToSpawn)
         {
-            Player.Instance.Ammo--;
-            
+    
             GameObject CreatedCannonball = Instantiate(Cannonball, ShotPoint.position, ShotPoint.rotation);
             CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower;
 

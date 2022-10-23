@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : Singleton<Player>
 {
     public int lifes;
-    public int Ammo;
     public float currentTimeSpawn;
     public float timeToSpawn;
     public bool isActive;
@@ -90,15 +89,6 @@ public class Player : Singleton<Player>
             StartCoroutine(Letrero());
             SoundManager.Instance.PlayNewSound("GetItem");
             Destroy(other.gameObject);
-        }
-
-        if (other.CompareTag("AmmoItem"))
-        {
-            Ammo++;
-            Ammo++;
-            Ammo++;
-            Destroy(other.gameObject);
-            SoundManager.Instance.PlayNewSound("GetItem"); 
         }
     }
 
