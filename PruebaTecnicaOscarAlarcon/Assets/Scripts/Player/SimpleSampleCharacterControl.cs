@@ -36,7 +36,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// Variable que almacena la anterior velocidad vertical
     /// </summary>
     private float m_currentV = 0;
-    private float m_currentH2;
 
     /// <summary>
     /// Variable que almacena la anterior velocidad horizontal
@@ -89,8 +88,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     public CannonController shooting;
     [SerializeField]
     private float m_moveSpeedV;
-    [SerializeField]
-    private float m_moveSpeedH;
     [SerializeField]
     private float m_turnSpeed;
 
@@ -213,7 +210,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         if (!Player.Instance.IsActive)
             return;
 
-        cinemachineCamera.InputCamera();
+        //cinemachineCamera.InputCamera();
 
         //Validacion para cuando entra input de salto
         if (!m_jumpInput && characterPlayerInput.IsJumpKeyPressed())
@@ -234,20 +231,8 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
     private void FixedUpdate()
     {
-        //DirectUpdate();
         //TankUpdate();
-
-        if (!aimUse)
-        {
-            //Actualizacion de direccion de momiviento
-            TankUpdate();
-            //DirectUpdate();
-        }
-        else
-        {
-            TankUpdate();
-        }
-
+        DirectUpdate();
         #region Control de Salto
 
         // envio a controlador de animacion del bool si toca el piso 
@@ -264,22 +249,20 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
     private void TankUpdate()
     {
-        float h = characterPlayerInput.GetHorizontalCameraInput();
-        float h2 = characterPlayerInput.GetHorizontalMovementInput();
+        float h = characterPlayerInput.GetHorizontalMovementInput();
         float v = characterPlayerInput.GetVerticalMovementInput();
 
-
-        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
-        m_currentH2 = Mathf.Lerp(m_currentH2, h2, Time.deltaTime * m_interpolation);
+        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
 
-        transform.position += tr.forward * m_currentV * m_moveSpeedV * Time.deltaTime;
-        transform.position += tr.right * m_currentH2 * m_moveSpeedH * Time.deltaTime;
+        transform.position += transform.forward * m_currentV * m_moveSpeedV * Time.deltaTime;
         transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
 
+        m_animator.SetFloat("MoveSpeed", m_currentV);
 
-        m_animator.SetFloat("MoveSpeedV", v, 0.1f, Time.deltaTime);
-        m_animator.SetFloat("MoveSpeedH", h2, 0.1f, Time.deltaTime);
+        JumpingAndLanding();
+
+        //m_animator.SetFloat("MoveSpeedH", h2, 0.1f, Time.deltaTime);
         m_animator.SetBool("Aim", aimUse);
 
         JumpingAndLanding();
@@ -366,7 +349,8 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
             transform.position += m_currentDirection * moveSpeed * Time.deltaTime;
             
             //envio de velocidad del movimiento a controlador de animaciones
-            m_animator.SetFloat("MoveSpeedV", direction.magnitude);
+            m_animator.SetFloat("MoveSpeed", direction.magnitude);
+          //  m_animator.SetFloat("MoveSpeedV", direction.magnitude);
         }
 
         // llamada del salto y caida 
