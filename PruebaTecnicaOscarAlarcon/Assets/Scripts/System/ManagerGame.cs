@@ -52,7 +52,7 @@ public class ManagerGame : Singleton<ManagerGame>
 
     public void Game()
     {
-        valueAmmo.text = Player.Instance.Ammo.ToString();
+        //valueAmmo.text = Player.Instance.Ammo.ToString();
         TimeSpan time = TimeSpan.FromSeconds(timer.currentTime);
     }
 
