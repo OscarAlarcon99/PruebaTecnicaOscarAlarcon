@@ -29,10 +29,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// </summary>
     public CinemachineControllerCamera cinemachineCamera;
     /// <summary>
-    /// objeto que referencia el horizonte del juego
-    /// </summary>
-    public GameObject ForwardObjectReference;
-    /// <summary>
     /// Variable que almacena la anterior velocidad vertical
     /// </summary>
     private float m_currentV = 0;
