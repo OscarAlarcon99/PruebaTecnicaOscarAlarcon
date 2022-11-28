@@ -162,12 +162,10 @@ public class EnemyBoss : Singleton<EnemyBoss>
         if (life < 25)
         {
             LevelUp(3);
-
         }
         else if (life < 50)
         {
             LevelUp(2);
-
         }
         else
         {

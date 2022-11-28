@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 [DefaultExecutionOrder(-1)]
-public class CharacterInput : Singleton<CharacterInput>
+public class CharacterInput : MonoBehaviour
 {
     /// <summary>
     /// variable que almacena el valor tomado por el input system sobre movimiento del jugador. 
@@ -150,6 +150,21 @@ public class CharacterInput : Singleton<CharacterInput>
         else
         {
             return input.PlayerMovement.Action.triggered;
+        }
+    }
+
+    /// <summary>
+    /// Funcion que recibe valor de input de attack. 
+    /// </summary>
+    public bool IsAttackPressed()
+    {
+        if (touch)
+        {
+            return input.PlayerMovementTouch.Attack.triggered;
+        }
+        else
+        {
+            return input.PlayerMovement.Attack.triggered;
         }
     }
     /// <summary>

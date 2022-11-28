@@ -85,8 +85,7 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     [SerializeField]
     private float m_turnSpeed;
     public Transform tr;
-
-
+    public float speedRoll;
 
     private void Awake()
     {
@@ -205,6 +204,8 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
         if (!Player.Instance.IsActive)
             return;
 
+        HandleActions();
+
         //cinemachineCamera.InputCamera();
 
         //Validacion para cuando entra input de salto
@@ -227,7 +228,6 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     private void FixedUpdate()
     {
         //TankUpdate();
-        HandleActions();
         DirectUpdate();
         #region Control de Salto
 
@@ -268,12 +268,15 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
         if (index == 1 && Player.Instance.IsActive && Player.Instance.currentTimeSpawn > Player.Instance.timeToSpawn)
         {
+            m_animator.SetBool("IsInteracting", true);
             m_animator.SetTrigger("Attack");           
+            Debug.Log("sssss2");
             Player.Instance.currentTimeSpawn = 0;
         }
 
         if (index == 2)
         {
+            m_animator.SetBool("IsInteracting", true);
             m_animator.SetTrigger("Dead");
         }
 
@@ -287,7 +290,10 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
 
     public void HandleActions()
     {
-        if (characterPlayerInput.IsActionPressed())
+        if (m_animator.GetBool("IsInteracting"))
+            return;
+        
+        if (characterPlayerInput.IsAttackPressed())
         {
             SendAnimationReaction(1);
         }
@@ -310,20 +316,26 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
     /// </summary>
     private void DirectUpdate()
     {
-        //Lectura de input vertical
-        float v = characterPlayerInput.GetVerticalMovementInput();
-        //Lectura de input horizontal
-        float h = characterPlayerInput.GetHorizontalMovementInput();
+        if (!m_animator.GetBool("IsInteracting")) 
+        {
+            Debug.Log("ssss");
 
-        //referencia de posicion de maincamera
-        Transform camera = Camera.main.transform;
+            //Lectura de input vertical
+            float v = characterPlayerInput.GetVerticalMovementInput();
+            //Lectura de input horizontal
+            float h = characterPlayerInput.GetHorizontalMovementInput();
 
-        // Interpolacion en la variacion  de la velocidad capatada por el input 
-        m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
-        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
+            // Interpolacion en la variacion  de la velocidad capatada por el input 
+            m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
+            m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
+        }
+        else
+        {
+            m_currentV = m_currentH = 0;
+        }
 
         // aplicar movimiento apartir de la camara 
-        Vector3 direction = camera.forward * m_currentV + camera.right * m_currentH;
+        Vector3 direction = Camera.main.transform.forward * m_currentV + Camera.main.transform.right * m_currentH;
 
         float directionLength = direction.magnitude;
         
@@ -380,5 +392,21 @@ public class SimpleSampleCharacterControl : Singleton<SimpleSampleCharacterContr
             // activar trigger de salto
             m_animator.SetTrigger("Jump");
         }
+    }
+
+    public void OnAnimatorMove()
+    {
+        if (!m_animator.GetBool("IsInteracting"))
+            return;
+        Debug.Log("ssss1122112");
+
+
+        float delta = Time.deltaTime;
+        m_rigidBody.drag = 0;
+        Vector3 deltaPosition = m_animator.deltaPosition;
+        deltaPosition.y = 0;
+        Vector3 _velocity;
+        _velocity = (deltaPosition / delta) * speedRoll;
+        m_rigidBody.velocity = _velocity;
     }
 }

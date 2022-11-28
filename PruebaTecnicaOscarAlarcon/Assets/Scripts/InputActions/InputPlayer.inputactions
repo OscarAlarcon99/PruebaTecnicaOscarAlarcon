@@ -60,6 +60,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "InvertVector2(invertX=false)",
                     "interactions": ""
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "5d4ec123-5ce8-4142-ad41-182cd2d6f22b",
+                    "expectedControlType": "Button",
+                    "processors": "InvertVector2(invertX=false)",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -260,6 +268,17 @@
                     "action": "LookAim",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0808080d-378a-404e-8cdf-91b6f9ab7cbe",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -328,6 +347,14 @@
                     "type": "PassThrough",
                     "id": "3ebf30f2-e53b-4912-8ee7-7cd1ed9c12a9",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "f7c6259a-14a0-4b00-8806-7ded79fbd5a4",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
                 }
@@ -418,6 +445,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "PrimaryTouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2266ad75-4827-4325-a4cd-ee18dc43068f",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
